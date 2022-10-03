@@ -1,2 +1,9 @@
 
 blog/myblog/themes/hexo-theme-butterfly/
+Tedu
+Tedu/*
+Git
+Git/*
+.*
+.DS_Store
+Tedu/.DS_Store
