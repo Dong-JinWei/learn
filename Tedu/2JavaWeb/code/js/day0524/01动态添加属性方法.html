@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>动态添加删除方法</title>
+		<script>
+			// java 是一种静态语言，对象一旦创建，其方法就无法修改
+			// js 是一种动态语言，可以动态的创建删除方法
+			var dog = new Object();
+			dog.name = "旺财";
+			dog.age = 2;
+			dog.eat = function(){
+				document.write("eat food" + "<br/>");
+			}
+			document.write(dog.name + "<br/>");
+			document.write(dog.age + "<br/>");
+			dog.eat();
+			// 删除方法或属性
+			delete dog.eat;
+			
+			var cat = new Object();
+			cat.name = "hua";
+			cat.age = 5;
+			cat.eat = function(){
+				document.write("eat fish");
+			}
+			
+			document.write(cat.name + "<br/>");
+			document.write(cat.age + "<br/>");
+			cat.eat()
+			document.write("<br/>");
+			// 判断某个属性或方法属于对象
+			document.write("name" in cat);
+			document.write("<br/>");
+			document.write("eat" in cat);
+			document.write("<br/>");
+			// 判断每个对象是否属于某个类
+			document.write(dog instanceof Object);
+			document.write("<br/>");
+			// 判断对象类型
+			document.write(typeof dog);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

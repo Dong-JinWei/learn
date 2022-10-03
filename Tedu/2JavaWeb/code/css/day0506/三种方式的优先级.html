@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>测试优先级</title>
+		<style>
+			h3{
+				font-size: 60px;
+				color: aquamarine;
+			}
+			p{
+				font-size: 60px;
+				color: blue;
+			}
+		</style>
+		
+	</head>
+	<link rel="stylesheet" href="css/c2.css">
+	<body>
+		<!-- 行内优先级最高 -->
+		<!-- 外部样式和内联样式的优先级和书写顺序有关 -->
+		<h3 style="font-size: 80px; color: red;">晚上好1</h3>
+		<h3>晚上好2</h3>
+		<h3>晚上好3</h3>
+		<h3>晚上好4</h3>
+		<h3>晚上好5</h3>
+		<!-- p{大家好$}*5 -->
+		<p>大家好1</p>
+		<p>大家好2</p>
+		<p>大家好3</p>
+		<p>大家好4</p>
+		<p>大家好5</p>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子类选择器</title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(function () {
+            $("table tr td a").css("font-size", "50px").css("color", "red");
+            $("ul li a").css("font-size", "50px").css("color", "blue");
+        })
+    </script>
+</head>
+<body>
+    <!--需求：让大家好变大变红，晚上好变大变蓝-->
+    <table>
+        <tr>
+            <td><a href="#">大家好</a></td>
+        </tr>
+    </table>
+    <ul>
+        <li><a href="#">晚上好</a></li>
+    </ul>
+</body>
+</html>

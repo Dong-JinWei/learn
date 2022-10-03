@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>异步请求</title>
+		<script src="js/v2.6.10/vue.min.js"></script>
+		<script src="js/axios.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<ul>
+				<li v-for="(item,index) in array" :key="index">
+					id:{{item.cateid}} <br> 类型名:{{item.catename}}
+				</li>
+			</ul>
+			
+			<input v-model="category.catename" placeholder="请输入类别名称"> <button @click="save()">添加</button>
+			<br>
+			<input v-model="category.cateid" placeholder="请输入要修改的id"/> <input v-model="category.catename" placeholder="请输入修改后的类别名称"/> <button @click='update'>修改</button>
+			<br>
+			<input v-model="category.cateid" placeholder="请输入要删除的id"/> <button @click="remove">删除</button>
+		</div>
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					array: [],
+					category: {
+						cateid: null,
+						catename: ""
+					}
+				},
+				mounted: function() {
+					this.list();
+				},
+				methods: {
+					list() {
+						that=this
+						axios.get('http://localhost/tbCategory/list')
+							.then(function(res) {
+								console.log(res.data.data);
+								that.array=res.data.data;
+							})
+							.catch(function() {
+								alert("网络异常，请重试")
+							})
+					},
+					save(){
+						that=this;
+						axios.post("http://localhost/tbCategory/save", this.category)
+						.then(function(res){
+							if (res.data.code == 200){
+								alert('添加成功');
+							}else{
+								alert('添加失败')
+							}
+							that.list();
+						})
+						.catch(function(){
+							alert("网络异常，请稍后重试")
+						})
+					},
+					update(){
+						that=this;
+						axios.post("http://localhost/tbCategory/update", this.category)
+						.then(function(res){
+							if (res.data.code == 200){
+								alert('修改成功');
+							}else{
+								alert('修改失败')
+							}
+							that.list();
+						})
+						.catch(function(){
+							alert("网络异常，请稍后重试")
+						})
+					},
+					remove(){
+						that=this;
+						axios.post("http://localhost/tbCategory/remove?cateid=" + this.category.cateid)
+						.then(function(res){
+							if (res.data.code == 200){
+								alert('删除成功');
+							}else{
+								alert('删除失败')
+							}
+							that.list();
+						})
+						.catch(function(){
+							alert("网络异常，删除失败")
+						})
+					}
+
+				}
+			})
+		</script>
+
+
+	</body>
+
+</html>

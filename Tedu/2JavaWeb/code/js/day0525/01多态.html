@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>测试多态</title>
+		<script>
+			function keep(animal){
+				document.write(animal.name);
+			}
+			var dog = {name:"旺财"};
+			keep(dog);
+			
+			// 语法没错，但不符合逻辑
+			var book = {name:"Java编程思想"};
+			keep(book);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

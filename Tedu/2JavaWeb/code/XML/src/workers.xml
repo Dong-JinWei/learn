@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<workers>
+    <worder id="1">
+        <name>张三</name>
+        <age>34</age>
+        <wage>3000</wage>
+    </worder>
+    <worder id="2">
+        <name>李四</name>
+        <age>40</age>
+        <wage>2000</wage>
+    </worder>
+    <worder id="3">
+        <name>王五</name>
+        <age>54</age>
+        <wage>8000</wage>
+    </worder>
+</workers>

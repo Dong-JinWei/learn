@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>箭头函数</title>
+		<script>
+			// 原始函数调用
+			// let f = function(){
+			// 	alert("f函数被调用");
+			// }
+			// f();
+			
+			// 如果只有一条语句时，大括号可以省略不写
+			// let f = () => {alert("f函数")};
+			// let f = () => alert("f函数");
+			// f();
+			
+			// let add = (a, b) => {return a + b};
+			// 注意：如果只有一条返回语句，并且需要简写时，连return要一并省略
+			// let add = (a, b) => a + b;
+			// alert(add(3,4));
+			
+			
+			// 箭头函数不可以做构造方法
+			let Person = (name, age) => {this.name = name; this.age = age};
+			let person = new Person("lisi", 32);
+			console.log(person);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

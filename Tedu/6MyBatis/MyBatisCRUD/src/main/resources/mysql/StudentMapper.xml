@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--接口的包名及路径-->
+<mapper namespace="com.tedt.mapper.StudentMapper">
+
+    <!--    public int insertStudentMore(@Param("name") String sName, @Param("pwd") String sPwd);-->
+    <insert id="insertStudentMore">
+        insert into t_student(s_name, s_pwd)
+        values (#{name}, #{pwd})
+    </insert>
+
+
+    <!--    public int insertStudent(@Param("stu") Student student);-->
+    <insert id="insertStudent">
+        insert into t_student(s_name, s_pwd)
+        values (#{stu.sName}, #{stu.sPwd})
+    </insert>
+
+    <!-- public int updateStudent(@Param("map")Map<String, Object> stuMap); -->
+    <update id="updateStudent">
+        update t_student
+        set s_pwd=#{map.pwd},
+            s_name=#{map.name}
+        where s_id = #{map.id}
+    </update>
+
+
+
+</mapper>

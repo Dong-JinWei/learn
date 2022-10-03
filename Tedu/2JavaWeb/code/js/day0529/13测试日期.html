@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>测试日期</title>
+		<script>
+			// let date = new Date();
+			// document.write(date);
+			// document.write("<br/>")
+			// // 本地化时间显示
+			// document.write(date.toLocaleDateString())
+			// document.write("<br/>")
+			// // 获取年份
+			// document.write(date.getFullYear());
+			// document.write("<br/>")
+			// // 获取月份，0-11
+			// document.write(date.getMonth() + 1);
+			// document.write("<br/>")
+			// // 返回星期 0-6，星期天用0表示，其他都是123456
+			// document.write(date.getDay());
+			// document.write("<br/>")
+			// // 获取时分秒
+			// document.write(date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "<br/>");
+			// // 获取时间戳（从1970年1月1日0时0分0秒0毫秒到现在的毫秒数）
+			// document.write(date.getTime());
+			// document.write("<br/>")
+			// // date.toTimeString(new Date(), "yyyy年mm月dd日 hh时mm分ss秒");
+			
+			// // 如何设置时间
+			// var d = new Date();
+			// // d.setFullYear(2002, 8-1, 25);
+			// d.setFullYear(2002, 2 - 1, 31);
+			// document.write(d);
+			
+			// 课堂练习：制作年，用下拉列表显示从1900年到现在的所有年份。
+			var date = new Date();
+			document.write("<select name=\"year\">");
+			for(var i = 1900; i <= date.getFullYear(); i++){
+				document.write("<option value=" + i + ">"+i+"</option>")
+			}
+			document.write("</select>");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

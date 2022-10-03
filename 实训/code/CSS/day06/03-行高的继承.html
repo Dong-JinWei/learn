@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行高的继承</title>
+    <style>
+        body {
+            color: red;
+            /* font: 30px/50px '楷体'; */
+            /* font: 30px '楷体'; */
+            /* 行高 */
+            /* line-height: 1.5; */
+            /* 同时这是字体和行高 */
+            font: 30px/1.5 '幼圆';
+        }
+
+        div {
+            /* 继承body的行高 */
+            /* 所以div的行高就是14*1.5 =  21px*/
+            font-size: 14px;
+            background-repeat: no-repeat;
+            background-position: 100% 100%;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        /* li标签没有指定文字的大小，则会继承父亲的文字大小 */
+    </style>
+</head>
+
+<body>
+    <div>div里的小可爱</div>
+
+    <p>p标签里的小可爱</p>
+
+    <ul>
+        <li>li标签里的小可爱</li>
+    </ul>
+</body>
+
+</html>

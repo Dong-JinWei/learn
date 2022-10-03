@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>链接伪类选择器</title>
+    <style>
+        /* 为访问的链接颜色 */
+        a:link {
+            color: rgb(255, 0, 0);
+            text-decoration: none;
+        }
+
+        /* 已访问过的标签 */
+        a:visited {
+            color: orange;
+        }
+
+        /* 鼠标经过链接时的颜色 */
+        a:hover {
+            color: skyblue;
+        }
+
+        /* 鼠标按下，还没有弹起的颜色 */
+        a:active {
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">传智播</a>
+    <a href="#">传智播</a>
+    <a href="https://www.baidu.com/">百度</a>
+    <a href="https://www.google.com/">Google</a>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="date" class="cn.tedu.bean.MyDate"/>
+
+    <bean id="user02" p:id="1002" p:name="dowei" p:age="21" p:date-ref="date" class="cn.tedu.bean.User">
+        <property name="score">
+            <array>
+                <value>89.2</value>
+                <value>89.1</value>
+                <value>79.9</value>
+            </array>
+        </property>
+        <property name="joy">
+            <list>
+                <value>sing</value>
+                <value>jump</value>
+                <value>rap</value>
+                <value>ball</value>
+            </list>
+        </property>
+        <property name="book">
+            <set>
+                <value>java</value>
+                <value>mybatis</value>
+                <value>Spring</value>
+                <value>Linux</value>
+                <value>Docker</value>
+            </set>
+        </property>
+        <property name="friend">
+            <map>
+                <entry key="Johnny" value="man"/>
+                <entry key="Dio" value="woman"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="user03" class="cn.tedu.bean.User">
+        <property name="id" value="#{user02.id}"/>
+        <property name="name" value="#{user02.name}"/>
+        <property name="age" value="#{user02.age}"/>
+        <property name="score" value="#{user02.score}"/>
+        <property name="date" value="#{user02.date}"/>
+        <property name="joy" value="#{user02.joy}"/>
+        <property name="book" value="#{user02.book}"/>
+        <property name="friend" value="#{user02.friend}"/>
+    </bean>
+</beans>

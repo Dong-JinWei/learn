@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>课堂练习</title>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script>
+			$(function(){
+				var date = new Date();
+				var year = date.getFullYear();
+				for (let i = 1900; i <= year; i++){
+					$("#year").append("<option value="+i+">"+i+"</option>")
+					
+				}
+			})
+		</script>
+	</head>
+	<body>
+		<!-- 需求：显示1900年到当前年份 -->
+		<select id="year"></select>
+	</body>
+</html>

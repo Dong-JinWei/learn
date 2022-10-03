@@ -1,0 +1,9 @@
+/* 写法同style标签内部一样，但是不能写style标签 */
+h3 {
+	font-size: 100px;
+	color: gold;
+}
+p {
+	font-size: 100px;
+	color: gold;
+}

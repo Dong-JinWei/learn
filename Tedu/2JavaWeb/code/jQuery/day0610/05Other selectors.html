@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Other selectors</title>
+		<script src="js/jquery-1.8.3.js"></script>
+		<script>
+			$(function(){
+				// 第一个出现的li
+				$('li:first').css("color","red");
+				// 最后出现的li
+				$('li:last').css("color","green");
+				
+				console.log( $(":checkbox:not(:checked)").val());
+								
+				// 选择偶数行，index从0开始
+				$("tr:even").css("color", "red");
+				// 选择计数行，index从0开始
+				$("tr:odd").css("color", "green");
+				// 选择指定行，index从0开始
+				$("tr:eq(3)").css("font-size", "50px");
+				// 选择大于指定索引的元素，索引从0开始
+				$("tr:gt(3)").css("font-size", "30px");
+				//  选择小于指定索引的元素，索引从0开始
+				$("tr:lt(2)").css("font-size", "40px");
+				// 匹配如 h1, h2, h3之类的标题元素
+				$(":header").css("background", "#eee");
+			})
+		</script>
+	</head>
+	<body>
+		<ul>
+		    <li>list item 1</li>
+		    <li>list item 2</li>
+		    <li>list item 3</li>
+		    <li>list item 4</li>
+		    <li>list item 5</li>
+		</ul>
+		
+		<input type="checkbox" name="hobby" value="羽毛球" checked/>羽毛球
+		<input type="checkbox" name="hobby" value="乒乓球" />乒乓球
+		
+		<table>
+		  <tr><td>Header 0</td></tr>
+		  <tr><td>Value 1</td></tr>
+		  <tr><td>Value 2</td></tr>
+		  <tr><td>Value 3</td></tr>
+		  <tr><td>Value 4</td></tr>
+		  <tr><td>Value 5</td></tr>
+		</table>
+		
+		<h1>Header 1</h1>
+		<p>Contents 1</p>
+		<h2>Header 2</h2>
+		<p>Contents 2</p>
+	</body>
+</html>

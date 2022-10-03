@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>课后任务</title>
+		<script>
+			/*
+			课后练习：
+			1.var str = “1qa2asd3asds45asd3”;取出字符串中的所有数字
+			*/
+		   var str = "1qa2asd3asds45asd3";
+		   var res = "";
+		   for(let i = 0; i < str.length;i++){
+			   var char = str.charAt(i);
+			   if (!isNaN(char)){
+				   res += char;
+			   }
+		   }
+		   document.write("原字符串：" + str + "<br/>");
+		   document.write("提取后的字符串：" + res +"<br/>");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

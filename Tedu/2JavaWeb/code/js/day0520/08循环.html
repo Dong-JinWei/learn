@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>测试循环</title>
+		<script>
+			// 计算1+...100
+			
+			var a = 1;
+			var sum = 0;
+			while (a <= 100){
+				sum = sum + a;
+				a++;
+			}
+			document.write("while："+ sum);
+			document.write("<br/>")
+			
+			var sum2 = 0;
+			for (var i = 1; i <= 100; i++){
+				sum2 = sum2 + i;
+			}
+			document.write("for：" + sum2);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

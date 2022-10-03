@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>课后任务1</title>
+	</head>
+	<body>
+		用户名：<input id="username" type="password" value="admin">
+		<input type="button" value="显示用户名" onclick="showUname()">
+		<br>
+		密码：<input id="pwd" type="password" value="abc123">
+		<input type="button" value="显示密码" onclick="showPwd()">
+	</body>
+	<script>
+		// 1. 书写用户名，密码，按钮，点击按钮时，显示用户名和密码
+		var uname = document.getElementById("username");
+		var pwd = document.getElementById("pwd");
+		function showUname(){
+			uname.type = "text";
+		}
+		function showPwd(){
+			pwd.type = "text";
+		}
+		
+	</script>
+</html>

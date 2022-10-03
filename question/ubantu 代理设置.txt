@@ -1,0 +1,15 @@
+查看代理
+env|grep -i proxy
+
+取消代理
+unset 
+
+例：
+export http_proxy=118.210.42.251:44367
+或：
+export https_proxy=118.210.42.251:44367
+
+要取消该设置：
+unset http_proxy
+或：
+unset https_proxy

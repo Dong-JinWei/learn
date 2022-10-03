@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>对象做参数</title>
+		<script>
+			var boy = {name:"Johnny",keep:function(dog){console.log(dog)}};
+			document.write(boy.name);
+			document.write("<br/>");
+			// var dog = {name:"Huang", eat:function(){alert("Eat foot")}};
+			// boy.keep(dog);
+			// 等价于以下代码
+			// 匿名对象
+			boy.keep({name:"Huang", eat:function(){alert("Eat foot")}});
+			
+			var girl = {name:"girl", keep:function(flowers){console.log(flowers)}};
+			document.write(girl.name);
+			girl.keep({name:"玫瑰花",look:function(){alert("好看")}});
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

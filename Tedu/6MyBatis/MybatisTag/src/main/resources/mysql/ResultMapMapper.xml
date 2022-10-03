@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--接口的包名及路径-->
+<mapper namespace="cn.tedu.mapper.ResultMapMapper">
+
+<!--       public User findUserByName(String name); -->
+    <resultMap id="userResultMap" type="cn.tedu.bean.User">
+        <result property="uName" column="u_name"/>
+        <result property="uPassword" column="u_password"/>
+    </resultMap>
+
+    <select id="findUserByName" resultMap="userResultMap">
+        select * from user_table where u_name=#{name}
+    </select>
+
+    <!--    public Map<String, Object> findPartByName(@Param("name") String uName);-->
+    <select id="findPartByName" resultType="java.util.Map">
+        select u_password from user_table where u_name=#{name}
+    </select>
+
+
+    <!--    public List<User> findUserAll();-->
+    <select id="findUserAll" resultMap="userResultMap">
+        select * FROM user_table
+    </select>
+
+
+    <!--   useGeneratedKeys="true" 开启主键  keyProperty="uId" 类对应的主键  keyColumn="u_id" 主键列名  parameterType="cn.tedu.bean.User" 类型必须是类对象 -->
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="uId" keyColumn="u_id" parameterType="cn.tedu.bean.User">
+        insert into user_table values(#{user.uName}, #{user.uPassword})
+    </insert>
+
+</mapper>

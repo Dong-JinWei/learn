@@ -1,0 +1,113 @@
+.container{
+	margin: 0 auto;
+	width: 1002px;
+} 
+.header{
+	height: 128px;
+	background-image: url(../img/top_bg.jpg);
+	background-position: 0 3px;
+}
+
+.header ul li {
+	float: left;
+	width: 90px;
+	margin-right: 1px;
+}
+
+.header ul li a {
+	display: block;
+	font: 16px/30px '微软雅黑','黑体',sans-serif;
+	color: #363636;
+	width: 90px;
+	height: 37px;
+	text-align: center;
+	border-radius: 5px;
+	transition: all 0.2s;
+	
+}
+
+.header ul li a:hover {
+	color: white;
+	background-image: url(../img/nav_on.gif);
+}
+
+.ad {
+	margin: 6px 0;
+}
+
+.left {
+	background-color: #f00;
+	width: 694px;
+	border-radius: 5px;
+	border-top: none;
+	float: left;
+	border: 1px solid gray;
+}
+
+.left .title {
+	height: 37px;
+	background-image: url(../img/index_main_top_bg.gif);
+}
+
+.left img {
+	float: left;
+	margin: 5px 0 0 10px;
+}
+
+.left h1 {
+	float: left;
+	color: #151515;
+	font-size: 16px;
+	line-height: 37px;
+	margin-left: 10px;
+	font-weight: 300;
+}
+
+.main .title a {
+    float: right;
+    line-height: 37px;
+    color: #888;
+}
+
+.left .four {
+    width: 326px;
+    height: 200px;
+    background-color: #eee;
+    float: left;
+    margin: 10px;
+}
+
+.left .four h2 {
+    color: #a0a0a0;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 6px 0 6px 10px;
+}
+
+.left .four img {
+    float: left;
+    margin-left: 10px;
+    background-color: #fff;
+    padding: 6px;
+}
+
+.main .four ul {
+    float: left;
+    margin-left: 10px;
+}
+.main .four ul li {
+    font-size: 12px;
+    height: 20px;
+    background-image: url(../img/service_intro_bg.gif);
+    background-repeat: no-repeat;
+    padding-left: 10px;
+    background-position: 0px 3px;
+}
+
+.main .four ul li a {
+    color: #888;
+}
+
+.main .four ul li a:hover {
+    color: #FF832C;
+}

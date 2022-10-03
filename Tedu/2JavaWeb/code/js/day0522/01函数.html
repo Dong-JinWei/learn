@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>测试函数</title>
+		<script>
+			//定义函数1，不调用函数，不会执行
+			// var f = new Function("alert('hello')");
+			
+			//调运函数
+			// f();
+			document.write("<br/>");
+			
+			document.write(typeof(f)); //function类型
+			document.write("<br/>");
+			//在js中，函数就是一个对象
+			
+			//定义函数2
+			//语法：function 函数名（参数1，参数2...）{语句；return 值}；
+			
+			function add(a, b){
+				return a+b;
+			}
+			document.write(add(1,65));
+			document.write("<br/>");
+			
+			var result = add(2,7);
+			document.write(result);
+			document.write("<br/>");
+			
+			function test(){
+				document.write("吃了哈");
+				return;//return有结束函数的功能
+				document.write("晚上好");
+			}
+			test();
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>制作导航</title>
+	</head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		a {
+			display: block;
+			text-decoration: none;
+			color: #333;
+			transition: all 0.1s;
+		}
+		
+		li {
+			/* 去掉无序列表前的符号 */
+			list-style: none;
+			width: 100px;
+			text-align: center;
+		}
+		
+		a:hover {
+			color: #f00;
+			background-color: #ccc;
+		}
+		
+		ul li {
+			float: left;
+		}
+		
+		/* 隐藏2级标签 */
+		.b ul{
+			display: none;
+		}
+		
+		/* 当鼠标移动到一级菜单时，让二级菜单显示 */
+		.b:hover ul{
+			display: block;
+		}
+		
+	</style>
+	<body>
+		<ul class="a">
+			<li class="b"><a href="#">导航</a>
+				<ul>
+					<li><a href="#">导航2</a></li>
+					<li><a href="#">导航2</a></li>
+					<li><a href="#">导航2</a></li>
+				</ul>
+			</li>
+			<li class="b"><a href="#">导航</a>
+				<ul>
+					<li><a href="#">导航2</a></li>
+					<li><a href="#">导航2</a></li>
+					<li><a href="#">导航2</a></li>
+				</ul>		
+			</li>
+			<li class="b" ><a href="#">导航</a>
+				<ul>
+					<li><a href="#">导航2</a></li>
+					<li><a href="#">导航2</a></li>
+					<li><a href="#">导航2</a></li>
+				</ul>
+			</li>
+			<li class="b"><a href="#">导航</a>
+				<ul>
+					<li><a href="#">导航2</a></li>
+					<li><a href="#">导航2</a></li>
+					<li><a href="#">导航2</a></li>
+				</ul>
+			</li>
+			<li class="b"><a href="#">导航</a>
+				<ul>
+					<li><a href="#">导航2</a></li>
+					<li><a href="#">导航2</a></li>
+					<li><a href="#">导航2</a></li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动特性</title>
+    <style>
+        /* 设置了浮动（float）的元素会脱标 */
+        /* 1、脱离了标准流（浮动）移动到指定位置 */
+        /* 2、浮动下边的和子不在保留在原来的位置 */
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            float: left;
+        }
+
+        .box2 {
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">浮动的小可爱</div>
+    <div class="box2">标准的小可爱</div>
+</body>
+
+</html>

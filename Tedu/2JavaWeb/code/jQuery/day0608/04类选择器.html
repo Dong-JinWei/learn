@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类选择器</title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script !src="">
+        $(function () {
+            // 需求：把a标签变大变红，b变大变蓝
+            // $(".a").css("font-size","50px").css("color","red");
+            // $(".b").css("font-size","50px").css("color","blue");
+            // 需求：把p标签位数是奇数标签变大变红
+            $("p.a").css("font-size", "50px").css("color", "red");
+        })
+    </script>
+</head>
+<body>
+    <p class="a">大家好1</p>
+    <p class="b">大家好2</p>
+    <p class="a">大家好3</p>
+    <p class="b">大家好4</p>
+    <p class="a">大家好5</p>
+    <h3 class="a">晚上好1</h3>
+    <h3 class="b">晚上好2</h3>
+    <h3 class="a">晚上好3</h3>
+    <h3 class="b">晚上好4</h3>
+    <h3 class="a">晚上好5</h3>
+</body>
+</html>

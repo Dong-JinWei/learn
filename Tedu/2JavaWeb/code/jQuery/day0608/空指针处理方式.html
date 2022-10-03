@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>空指针处理方式</title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script>
+        // js 遇到了空指针时，程序会停止
+        // var person = null;
+        // alert(person.name);
+        // alert("程序正常结束")
+
+        // jquery中$() 中的参数为null时，可以继续调用其方法或者属性
+        var person = null; // js对象
+        $(person).val();
+        alert("程序正常结束");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

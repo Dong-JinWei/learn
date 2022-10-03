@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>测试清除浮动</title>
+		<style>
+			.a {
+				float: left;
+				width: 300px;
+				height: 300px;
+				background-color: red;
+			}
+			.clearfx {
+				clear: both;
+			}
+			.b {
+				/* 清除左浮动 */
+				/* right:右浮动 */
+				/* both:左右浮动 */
+				/* clear: left; */
+				width: 500px;
+				height: 500px;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="a"></div>
+		<div class="clearfx"></div>
+		<div class="b"></div>
+	</body>
+</html>

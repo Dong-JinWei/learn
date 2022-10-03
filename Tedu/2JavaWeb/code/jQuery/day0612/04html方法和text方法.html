@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>html方法和text方法</title>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script>
+			$(function(){
+				// console.log($(".d").html());
+				// console.log($(".d").text());
+				// 会识别内容中的标签
+				$(".d2").html("<b>晚上好<b/>");
+				// 不会识别内容重的标签，全部当成文本对待
+				$(".d3").text("<b>晚上好<b/>");
+			})
+		</script>
+	</head>
+	<body>
+		<div class="d">
+			<b>大家好</b>
+		</div>
+		<hr />
+		<div class="d2"></div>
+		<div class="d3"></div>
+	</body>
+</html>

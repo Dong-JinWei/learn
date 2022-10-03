@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>exe_3.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script src="js/jquery-1.8.3.min.js"></script>
+  </head>
+  <body>
+	
+	<input type="checkbox" value="篮球"/>篮球
+	<input type="checkbox" value="排球"/>排球	
+	<input type="checkbox" value="羽毛球"/>羽毛球	
+	<input type="checkbox" value="乒乓球"/>乒乓球
+	
+	<input type="button" value="选中的个数" onclick="f1()"/>
+	<input type="button" value="依次显示选中的value" onclick="f2()"/>
+	
+	<script type="text/javascript">
+		//当点击"选中个数时"，显示选择的个数，点击"依次显示选中的value"时显示选择的内容
+		function f1(){a
+			var size = $(":checkbox:checked").size();
+			alert(size);
+		}
+		function f2(){
+			var checkeds = $(":checkbox:checked");
+			checkeds.each(function(i,e){
+				alert(i + " " + e.value);
+			})
+		}
+	</script>
+	
+  </body>
+</html>
+
+
+
+
+ 

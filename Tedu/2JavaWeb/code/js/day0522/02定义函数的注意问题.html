@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>定义函数的注意问题</title>
+		<script>
+			//1.形参和实参参数个数可以不同
+			function test(a,b){
+				document.write("a=" + a);
+				document.write("<br/>");
+				document.write("b=" + b);
+				document.write("<br/>");
+			}
+			test(3,5);
+			// 如果少于形参，没有赋值的会默认赋值undefined
+			test(3);
+			
+			// 如果大于形参，也不会报错
+			test(1,2,3);
+			
+			// 在函数中，内置了一个arguments对象，保存了用户传递的参数
+			// arguments对象为伪数组，可以当数组用
+			function test2(){
+				document.write("参数1：" + arguments[0]);
+				document.write("<br/>");
+				document.write("参数2：" + arguments[1]);
+				document.write("<br/>");
+				document.write("参数3：" + arguments[2]);
+				document.write("<br/>");
+			}
+			test2(56, 7,8);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

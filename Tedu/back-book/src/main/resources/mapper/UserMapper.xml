@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.book.app.dao.TbUserDao">
+
+
+    <update id="updateStat">
+        update tb_user
+        set stat = #{stat}
+        where uid = #{uid}
+    </update>
+    <update id="update">
+        update tb_user
+        set uname     = #{uname},
+            `password`= #{password},
+            sex= #{sex}
+        where uid = #{uid}
+    </update>
+    <update id="updateImagesInt">
+        update tb_user
+        set images = #{images}
+        where uid = #{uid}
+    </update>
+</mapper>

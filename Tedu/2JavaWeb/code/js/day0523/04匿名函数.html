@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>匿名函数</title>
+		<script>
+			// 步骤一：先书写两个小括号，第一个小括号里边放匿名函数，第二个小括号放实参
+			// 步骤二：书写函数，如果有参数，在第二个小括号中传实参
+			(function(a,b){
+				document.write(a + b);
+			})(2, 3);
+			document.write("<br/>");
+			(function(a,b){;
+				document.write(a - b);
+			})(5,3);
+			document.write("<br/>");
+			!function(a,b){
+				document.write(a * b);
+			}(3,4);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

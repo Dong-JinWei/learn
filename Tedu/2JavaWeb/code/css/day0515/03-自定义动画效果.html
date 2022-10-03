@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>自定义动画</title>
+		<style>
+			.d {
+				height: 300px;
+				width: 300px;
+				background-color: #f00;
+				/* 步骤三: 使用动画 */
+				/* 第一个参数表示动画名，第二个参数表示变化时间，第三个参数表示动画次数 */
+				animation: cartoon 2s infinite;
+			}
+
+			/* 步骤，定义关键帧 */
+			@keyframes cartoon {
+				/* 步骤二，指定变化过程 */
+				form{
+					width: 300px;
+					height: 300px;
+				}to{
+					width: 500px;
+					height: 500px;
+					background-color: #00f;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="d"></div>
+	</body>
+</html>

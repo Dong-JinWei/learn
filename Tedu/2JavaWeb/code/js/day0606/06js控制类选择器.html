@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>js控制类选择器</title>
+		<style>
+		</style>
+	</head>
+	<body>
+		<div class="d" id="dd"></div>
+		<div class="d"></div>
+		<script>
+			// // 通过类名来控制标签
+			// var divs = document.getElementsByClassName("d");
+			// 通过标签名来控制标签
+			// var divs = document.getElementsByTagName("div")
+			// es6 新增的获取标签对象的方式
+			var divs = document.querySelectorAll(".d");
+			for (var div of divs){
+				div.style.width = "300px";
+				div.style.height = "300px";
+				div.style.backgroundColor = "red";
+				div.style.margin = "5px";
+			}
+			// 返回一个单个标签对象，一般使用id选择器，如果使用了类选择器返回所有元素的第一个
+			// var div = document.querySelector("#dd")
+			// div.style.width = "300px";
+			// div.style.height = "300px";
+			// div.style.backgroundColor = "blue";
+			// div.style.margin = "5px";
+		</script>
+	</body>
+</html>

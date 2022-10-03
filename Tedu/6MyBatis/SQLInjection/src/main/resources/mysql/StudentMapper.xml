@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--接口的包名及路径-->
+<mapper namespace="cn.tedu.mapper.StudentMapper">
+
+    <!-- public Student findStuByName(Integer sId); -->
+    <select id="findStuByName" resultMap="StuResultMap">
+        SELECT *
+        FROM t_student
+        WHERE s_name = ${name}
+    </select>
+
+    <resultMap id="StuResultMap" type="cn.tedu.bean.Student">
+        <id column="s_id" property="sId"/>
+        <result column="s_name" property="sName"/>
+        <result column="s_pwd" property="sPwd"/>
+    </resultMap>
+
+    <!-- public List<Student> findUserOrderBy(@Param("order") String orderBy); -->
+    <select id="findUserOrderBy" resultMap="StuResultMap">
+        select *
+        from t_student
+        order by s_id ${order};
+    </select>
+
+    <!-- public List<Student> findUserByLike(@Param("like") String like); -->
+    <select id="findUserByLike" resultMap="StuResultMap">
+        SELECT * FROM t_student WHERE s_name LIKE('%${like}%')
+    </select>
+
+</mapper>

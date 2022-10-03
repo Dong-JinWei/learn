@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>属性的相关方法</title>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script>
+			$(function(){
+				// 给指定的元素设置属性
+				$(":checkbox").attr("checked", "checked")
+					.attr("disabled","disabled");
+					
+				// 给指定的元素删除属性
+				$(":checkbox").removeAttr("disabled", "disabled");
+			})
+		</script>
+	</head>
+	<body>
+		<input type="checkbox" value="a">a
+		<input type="checkbox" value="b">b
+		<input type="checkbox" value="c">c
+		<input type="checkbox" value="d">d
+		<input type="checkbox" value="e">e
+		<input type="checkbox" value="f">f
+	</body>
+</html>

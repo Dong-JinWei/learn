@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>灵犀科技</title>
+		<link rel="stylesheet" href="css/common.css">
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<meta name="description" content="灵犀科技是一个科技类网站"/>
+		<meta name="keywords" content="灵犀,科技,研发"/>
+		<style>
+			/* 居中 */
+			.container {
+				margin: 0 auto;
+				width: 1002px;
+			}
+			.header {
+				background-image: url(img/top_bg.jpg);
+				background-repeat: no-repeat;
+				height: 128px;
+				background-position: 0px 3px;
+			}
+			.header ul li {
+				float: left;
+				width: 90px;
+				margin-right: 1px;
+				text-align: center;
+				height: 37px;
+				line-height: 33px;
+			}
+			.header ul li a {
+				display: block;
+				color: #363636;
+				border-radius: 5px;
+				transition: all 0.2s;
+			}
+			.header ul li a:hover {
+				height: 37px;
+				color: #fff;
+				background-image: url(img/nav_on.gif);
+			}
+			.ad {
+				margin: 6px 0;
+			}
+			.main .left {
+				height: 480px;
+				width: 694px;
+				/* background-color: #f00; */
+				border: 1px solid gray;
+				border-radius: 5px;
+				border-top: none;
+				float: left;
+			}
+			.main .right {
+				width: 294px;
+				height: 480px;
+				/* background-color: #f00; */
+				float: right;
+			}
+			.main .title {
+				height: 37px;
+				background-image: url(img/index_main_top_bg.gif);
+			}
+			.main .title img {
+				float: left;
+				margin: 5px 0 0 10px;
+			}
+			.main .title h1 {
+				float: left;
+				color: #151515;
+				font-size: 16px;
+				line-height: 37px;
+				margin-left: 10px;
+				font-weight: 300;
+			}
+			.main .title a {
+				float: right;
+				line-height: 37px;
+				color:#888;
+			}
+			.main .four {
+				width: 326px;
+				height: 200px;
+				background-color: #eee;
+				float: left;
+				margin: 10px;
+			}
+			.main .four h2 {
+				color: #a0a0a0;
+				font-weight: 500;
+				font-size: 16px;
+				margin: 6px 0 6px 10px;
+			}
+			.main .four img {
+				float: left;
+				margin-left: 10px;
+				background-color: #fff;
+				padding: 6px;
+			}
+			.main .four ul {
+				float: left;
+				margin-left: 10px;
+			}
+			.main .four ul li {
+				font-size: 12px;
+				height: 20px;
+				background-image: url(img/service_intro_bg.gif);
+				background-repeat: no-repeat;
+				padding-left: 10px;
+				background-position: 0px 3px;
+			}
+			.main .four ul li a {
+				color: #888;
+			}
+			.main .four ul li a:hover {
+				color: #FF832C;
+			}
+			.main .right .article ul {
+				background-color: #eee;
+				margin-top: 1px;
+				padding-top: 10px;
+			}
+			.main .right .article ul a {
+				display: block;
+				height: 29px;
+				line-height: 29px;
+				font-size: 12px;
+				color: #888;
+				padding-left: 30px;
+				background-image: url(img/article_head.gif);
+				background-repeat: no-repeat;
+			}
+			.main .right .article ul a:hover {
+				color: #FF832C;
+				background-image: url(img/article_on_bg.gif);
+			}
+			.main .right .contact {
+				background-color: #eee;
+				height: 249px;
+				margin-top: 1px;
+			}
+			.main {
+				overflow: hidden;
+			}
+			.foot {
+				height: 120px;
+				margin-top: 10px;
+			}
+			.foot ul {
+				height: 40px;
+				background-color: #eee;
+				padding-left: 50px;
+			}
+			.foot ul li {
+				float: left;
+				width: 90px;
+				margin: 15px 10px 0 0;
+				line-height: 10px;
+			}
+			.foot ul li a {
+				font-size: 12px;
+			}
+			.foot div {
+				margin-top: 10px;
+				font-size: 12px;
+				font-family: '微软雅黑';
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 准备一个大的div,让其居中,它内部的所有div都会居中 -->
+		<!-- 容器div开始 -->
+		<div class="container">
+			<!-- 头部开始 -->
+			<div class="header">
+				<img src="img/logo.jpg"/>
+				<!-- ul>li*7>a{导航$} -->
+				<ul>
+					<li><a href="#" target="_blank">导航1</a></li>
+					<li><a href="#" target="_blank">导航2</a></li>
+					<li><a href="#" target="_blank">导航3</a></li>
+					<li><a href="#" target="_blank">导航4</a></li>
+					<li><a href="#" target="_blank">导航5</a></li>
+					<li><a href="#" target="_blank">导航6</a></li>
+					<li><a href="#" target="_blank">导航7</a></li>
+				</ul>
+			</div>
+			<!-- 头部结束 -->
+			<!-- 广告开始 -->
+			<div class="ad">
+				<img src="img/about_banner.jpg"/>
+			</div>
+			<!-- 广告结束 -->
+			<!-- 主体开始 -->
+			<div class="main">
+				<!-- 左侧的div开始 -->
+				<div class="left">
+					<!-- 标题div开始 -->
+					<div class="title">
+						<img src="img/circle.gif"/>
+						<h1>核心业务</h1>
+						<a href="#" target="_blank">MORE>>></a>
+					</div>
+					<!-- 标题div结束 -->
+					<!-- 左侧4个div开始 -->
+					<div class="four">
+						<h2>电子商务类网站建设</h2>
+						<img src="img/eshop_service.jpg"/>
+						<ul>
+							<li><a href="#" target="_blank">方便的订单管理1</a></li>
+							<li><a href="#" target="_blank">方便的订单管理2</a></li>
+							<li><a href="#" target="_blank">方便的订单管理3</a></li>
+							<li><a href="#" target="_blank">方便的订单管理4</a></li>
+							<li><a href="#" target="_blank">方便的订单管理5</a></li>
+						</ul>
+					</div>
+					<div class="four">
+						<h2>电子商务类网站建设</h2>
+						<img src="img/eshop_service.jpg"/>
+						<ul>
+							<li><a href="#" target="_blank">方便的订单管理1</a></li>
+							<li><a href="#" target="_blank">方便的订单管理2</a></li>
+							<li><a href="#" target="_blank">方便的订单管理3</a></li>
+							<li><a href="#" target="_blank">方便的订单管理4</a></li>
+							<li><a href="#" target="_blank">方便的订单管理5</a></li>
+						</ul>
+					</div>
+					<div class="four">
+						<h2>电子商务类网站建设</h2>
+						<img src="img/eshop_service.jpg"/>
+						<ul>
+							<li><a href="#" target="_blank">方便的订单管理1</a></li>
+							<li><a href="#" target="_blank">方便的订单管理2</a></li>
+							<li><a href="#" target="_blank">方便的订单管理3</a></li>
+							<li><a href="#" target="_blank">方便的订单管理4</a></li>
+							<li><a href="#" target="_blank">方便的订单管理5</a></li>
+						</ul>
+					</div>
+					<div class="four">
+						<h2>电子商务类网站建设</h2>
+						<img src="img/eshop_service.jpg"/>
+						<ul>
+							<li><a href="#" target="_blank">方便的订单管理1</a></li>
+							<li><a href="#" target="_blank">方便的订单管理2</a></li>
+							<li><a href="#" target="_blank">方便的订单管理3</a></li>
+							<li><a href="#" target="_blank">方便的订单管理4</a></li>
+							<li><a href="#" target="_blank">方便的订单管理5</a></li>
+						</ul>
+					</div>
+					<!-- 左侧4个div结束 -->
+				</div>
+				<!-- 左侧的div结束 -->
+				<!-- 右侧的div开始 -->
+				<div class="right">
+					<!-- 标题div开始 -->
+					<div class="title">
+						<img src="img/circle.gif"/>
+						<h1>文章观点</h1>
+						<a href="#" target="_blank">MORE>>></a>
+					</div>
+					<!-- 标题div结束 -->
+					<!-- 文章观点开始 -->
+					<div class="article">
+						<ul>
+							<li><a href="#" target="_blank">这是一篇好文章1</a></li>
+							<li><a href="#" target="_blank">这是一篇好文章2</a></li>
+							<li><a href="#" target="_blank">这是一篇好文章3</a></li>
+							<li><a href="#" target="_blank">这是一篇好文章4</a></li>
+							<li><a href="#" target="_blank">这是一篇好文章5</a></li>
+						</ul>
+					</div>
+					<!-- 文章观点结束 -->
+					<!-- 标题div开始 -->
+					<div class="title">
+						<img src="img/circle.gif"/>
+						<h1>联系我们</h1>
+						<a href="#" target="_blank">MORE>>></a>
+					</div>
+					<!-- 标题div结束 -->
+					<!-- 联系我们开始 -->
+					<div class="contact"></div>
+					<!-- 联网我们结束 -->
+				</div>
+				<!-- 右侧div结束 -->
+			</div>
+			<!-- 主体结束 -->
+			<!-- 底部开始 -->
+			<div class="foot">
+				<ul>
+					<li><a href="#" target="_blank">联系我们1</a></li>
+					<li><a href="#" target="_blank">联系我们2</a></li>
+					<li><a href="#" target="_blank">联系我们3</a></li>
+					<li><a href="#" target="_blank">联系我们4</a></li>
+					<li><a href="#" target="_blank">联系我们5</a></li>
+					<li><a href="#" target="_blank">联系我们6</a></li>
+					<li><a href="#" target="_blank">联系我们7</a></li>
+				</ul>	
+				<div>
+					&copy;2006-2016 北京市灵犀慧通科技有限公司 版权所有 http://www.lionhit.com 京ICP备07020337号
+				</div>
+			</div>
+			
+			<!-- 底部结束 -->
+		</div>
+		<!-- 容器div结束 -->
+	</body>
+</html>

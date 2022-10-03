@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素显示模式转换</title>
+    <style>
+        a {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            /* 把行内元素，转换为块级元素 */
+            display: block;
+        }
+
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+            /* 把块级元素，转换为行内元素 */
+            display: inline;
+        }
+
+        span {
+            width: 300px;
+            height: 100px;
+            background-color: purple;
+            /* 把行内元素转换为行内快元素 */
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">我是一个超链接</a>
+    <a href="#">我是一个超链接</a>
+    <div>我是块级元素</div>
+    <div>我是块级元素</div>
+    <span>行内元素转换为行内快元素</span>
+    <span>行内元素转换为行内快元素</span>
+</body>
+
+</html>

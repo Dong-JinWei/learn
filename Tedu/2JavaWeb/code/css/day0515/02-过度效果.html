@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>过渡效果</title>
+		<style>
+			.d {
+				height: 300px;
+				width: 300px;
+				background-color: #f00;
+				/* 过度效果，all表示所有属性，3s表示过度时间，单位时秒 */
+				transition: all 3s;
+				margin: 200px auto;
+				text-align: center;
+				font: 50px/300px '楷体';
+			}
+			
+			.d:hover {
+				border-radius: 50%;
+				background-color: #0f0;
+				/* transform变形 */
+				/* scale放大或者缩小指定的倍数 */
+				/* transform: scale(0.5); */
+				
+				color: #fff;
+				/* 沿着某个轴旋转，X，Y，Z */
+				transform: rotateZ(360deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="d">大家好</div>
+	</body>
+</html>

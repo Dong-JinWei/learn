@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>利用键值对创建对象</title>
+		<script>
+			// 语法：var 对象名={属性名1：属性值1， 属性名2：属性值2}
+			// var dog = {
+			// 	name:"aDog",
+			// 	age:20,
+			// 	doSome:function(){alert(this.name + " eat food " + ", age is " + this.age)}
+			// };
+			// dog.doSome();
+
+			// List<Student> students = new ArrayList();
+			// 通过Gson类可以把集合转换成js的数组(把这种数据称为JSON)
+			var stu = [
+				{id: 1234,name: "Johnny",age: 20,study: function() {document.write("Study hard")},computer:{brand:"联想",price:4999}},
+				{id: 2345,name: "Santiano",age: 30,study: function() {document.write("Study")},computer:{brand:"小米",price:9999}},
+				{id: 3456,name: "Michael",age: 49,study: function() {document.write("hard")},computer:{brand:"华为",price:1999}}
+			];
+			console.log(stu);
+			// for (var obj in stu) {
+			// 	document.write("My name is " + stu[obj].name + ", I am " + stu[obj].age + "<br/>");
+			// }
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

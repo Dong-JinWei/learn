@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>复制继承</title>
+		<script>
+			var person = {name:"藏三", age:20};
+			// 如果使用增强for循环遍历对象时，遍历出的时属性名
+			for(var i in person){
+				document.write("i = " + i + "<br/>");
+				document.write(person[i] + "<br/>");
+			}
+			
+			var Son = function(){
+				// 第一步：定义一个方法，用于遍历父类的方法
+				this.ext = function(person){
+					// 第二步：遍历person
+					for (var i in person){
+						// 第三步：把父类属性赋值给当前对象
+						this[i] = person[i];
+					}					
+				}
+			}
+			// 第四步：new对象，调用ext方法
+			var son = new Son();
+			son.ext(person);
+			document.write(son.name);
+			document.write("<br/>")
+			document.write(son.age);
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--接口的包名及路径-->
+<mapper namespace="cn.tedu.mapper.UserMapper">
+    <!--    id是接口中的方法名-->
+    <!--    resultType是放回的类型-->
+    <!--    里边写查询语句-->
+    <select id="findUser" resultType="cn.tedu.bean.User">
+        select * from user_table WHERE u_name=#{u_name};
+    </select>
+
+    <insert id="insertUser">
+        INSERT INTO user_table VALUES(#{u_name},#{u_password});
+    </insert>
+
+    <delete id="delUser">
+        delete from user_table where u_name=#{u_name};
+    </delete>
+</mapper>

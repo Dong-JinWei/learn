@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行高的继承</title>
+    <style>
+        body {
+            color: red;
+            /* font: 12px/24px 'Microsoft YaHei'; */
+            font: 12px/1.5 'Microsoft YaHei';
+        }
+
+        div {
+            /* 子元素继承了父元素 body的行高 1.5倍 */
+            /* 这个1.5就是当前元素文字大小font-size的1.5倍 所以div的行高就是21像素 */
+            font-size: 14px;
+        }
+
+        p {
+            /* 16 * 1.5 = 24 就是当前的行高 */
+            font-size: 16px;
+        }
+
+        /* li没有指定文字大小 则会继承父亲的文字大小，body12px 所以li的文字大小为12px
+        当前里的行高就是 12 * 1.5 = 18
+        */
+    </style>
+</head>
+
+<body>
+    <div>这是div里的内容</div>
+    <p>这是p标签里的内容</p>
+    <ul>
+        <li>我没有指定文字大小</li>
+    </ul>
+</body>
+
+</html>

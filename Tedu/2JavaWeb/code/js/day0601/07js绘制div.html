@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>使用js绘制div</title>
+		<style>
+			.d {
+				width: 300px;
+				height: 300px;
+				background-color: skyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d"></div>
+		<font size=2 size=7 size=1>你好</font>
+	</body>
+	<script>
+		// 如果id值写错，会返回null
+		var div = document.getElementById("d");
+		// div.style.width = "200px";
+		// div.style.height = "200px";
+		// div.style.backgroundColor = "red";
+		// div.style.margin = "0 auto";
+		// div.style.border = "1px blue solid"
+		// class是js的关键字，如果想使用class要改名为className
+		div.className = "d";
+	</script>
+</html>

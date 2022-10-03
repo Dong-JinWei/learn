@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 无参构造 -->
+    <!-- 单例模式 -->
+    <!-- <bean id="userBean" class="cn.tedu.bean.User" scope="singleton"/> -->
+    <!-- 非单例模式 -->
+    <!-- <bean id="userBean" class="cn.tedu.bean.User" scope="prototype"/> -->
+    <!-- 单例模式，延迟初始化 -->
+    <!-- <bean id="userBean" class="cn.tedu.bean.User" scope="singleton" lazy-init="true"/> -->
+
+    <!-- 有参构造 -->
+    <!-- <bean id="userBean" class="cn.tedu.bean.User" lazy-init="true"> -->
+    <!--     <constructor-arg index="0" value="1001"/> -->
+    <!--     <constructor-arg index="1" value="admin"/> -->
+    <!--     <constructor-arg index="2" value="123456"/> -->
+    <!-- </bean> -->
+
+    <!--使用工厂类中的静态方法创建对象-->
+    <bean id="userFac" factory-method="getUser" class="cn.tedu.bean.UserFactory"/>
+
+    <!--使用工厂类中的非静态方法创建对象-->
+    <bean id="factory" class="cn.tedu.bean.UserFactory"/>
+    <bean id="userFac2" factory-method="getUser2" factory-bean="factory"/>
+
+    <!--使用工厂类中的静态带参方法创建对象-->
+    <bean id="userFac3" factory-method="getUser3" class="cn.tedu.bean.UserFactory">
+        <constructor-arg index="0" value="1003"/>
+        <constructor-arg index="1" value="Johnny"/>
+        <constructor-arg index="2" value="Johnny"/>
+    </bean>
+</beans>

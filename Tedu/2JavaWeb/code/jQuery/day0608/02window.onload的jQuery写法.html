@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script>
+        // window.onload = function (){
+        //     var d = document.getElementById("d");
+        //     d.style.width = "300px";
+        //     d.style.height = "300px";
+        //     d.style.backgroundColor = "red";
+        // }
+        // $(document).ready(function (){
+        //     let d = document.getElementById("d");
+        //     d.style.width = "300px";
+        //     d.style.height = "300px";
+        //     d.style.backgroundColor = "red";
+        // })
+        // $().ready(function (){
+        //     let d = document.getElementById("d");
+        //     d.style.width = "300px";
+        //     d.style.height = "300px";
+        //     d.style.backgroundColor = "green";
+        // })
+        // $(function (){
+        //     let d = document.getElementById("d");
+        //     d.style.width = "300px";
+        //     d.style.height = "300px";
+        //     d.style.backgroundColor = "blue";
+        // })
+        // jQuery 书写样式的方法
+        // $(function (){
+        //     $("#d").css("width","300px")
+        //         .css("height","300px")
+        //         .css("background-color","yellow");
+        // })
+        // jQuery 对象和js对象的互相转换
+        // $(function (){
+        //     // js的的方法和jQuery的方法不能混用
+        //     let d = document.getElementById("d"); // js 对象
+        //     // 转换的语法：$(js对象)
+        //     let $d = $(d); // $d 是jquery对象
+        //     $("#d").css("width","300px")
+        //         .css("height","300px")
+        //         .css("background-color","yellow");
+        // })
+        // jquery 转换为js对象
+        $(function (){
+            // jquery 对象实质上是Z一个数组
+            // 通过下标可以取出js对象
+            let d = $("#d")[0];
+            d.style.width = "300px";
+            d.style.height = "300px";
+            d.style.backgroundColor = "red";
+        })
+    </script>
+</head>
+<body>
+<div id="d"></div>
+</body>
+</html>

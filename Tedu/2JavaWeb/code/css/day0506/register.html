@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="server.html">
+			<center>
+				<table width="500" height="300" bgcolor="#b4daff">
+					<tr height="60" bgcolor="#2493ff">
+						<th colspan="2"><font size="6">欢迎注册</font></th>						
+					</tr>
+					<tr>
+						<td  align="right" width="170" height="30">用户名：</td>
+						<td><input type="text" name="username"/></td>
+					</tr>
+					<tr>
+						<td align="right"  height="30">密码：</td>
+						<td><input type="password" name="password"/></td>
+					</tr>
+					<tr>
+						<td align="right"  height="30">性别：</td>
+						<td>
+							<input type="radio" name="gender" value="男"/>男
+							<input type="radio" name="gender" value="女"/>女
+							
+						</td>
+					</tr>
+					<tr>
+						<td align="right" height="30">电话：</td>
+						<td><input type="text" name="phone"></td>
+					</tr>
+					<tr>
+						<td align="right"  height="30">职业：</td>
+						<td>
+							<select name="job">
+								<option value="请选择">请选择</option>
+								<option value="老师">老师</option>
+								<option value="学生">学生</option>
+								<option value="程序员">程序员</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td align="right"  height="30">爱好：</td>
+						<td>
+							<input type="checkbox" name="hobby" value="敲代码" />敲代码
+							<input type="checkbox" name="hobby" value="打游戏" />打游戏
+							<input type="checkbox" name="hobby" value="唱歌" />唱歌
+							<input type="checkbox" name="hobby" value="运动" />运动
+						</td>
+					</tr>
+					<tr>
+						<td align="right"  height="30">地址：</td>
+						<td>
+							<textarea name="address"  cols="30" rows="10"></textarea>
+						</td>
+					</tr>
+					<tr align="center" bgcolor="#2493ff" height="30">
+						<td colspan="2">填写完成后点击下面提交按钮提交表单</td>
+					</tr>
+					<tr align="center" height="30">
+						<td colspan="2">
+							<input type="submit">&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="reset">
+						</td>
+					</tr>
+				</table>
+			</center>
+		</form>
+	</body>
+</html>

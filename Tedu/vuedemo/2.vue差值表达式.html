@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue差值表达式</title>
+		<script src="js/v2.6.10/vue.min.js"></script>
+		
+	</head>
+	<body>
+		<div id="app">
+			输出普通字符串:{{msg}}<br>
+			数学运算:{{1+1}}<br>
+			对象输出:{{user}}, {{user.name}}<br>
+			数组输出:{{array}}, {{array[0]}}<br>
+			调用字符串方法:{{msg.split('').reverse().join('')}}
+		</div>
+		
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					msg: 'hello world',
+					user: {
+						name: '张三',
+						sex: '男'
+					},
+					array:[1,2,3,4]
+				}
+			})
+		</script>
+		
+	</body>
+</html>

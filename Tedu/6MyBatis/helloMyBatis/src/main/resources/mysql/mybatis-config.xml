@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <environments default="mybatis">
+        <!--配置连接数据库的信息-->
+        <environment id="mybatis">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+<!--                加载驱动-->
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <!-- &要使用&amp;-->
+                <property name="url" value="jdbc:mysql://localhost:3306/dowei?serverTimezone=GMT&amp;characterEncoding=utf8"/>
+<!--                用户名-->
+                <property name="username" value="root"/>
+<!--                密码-->
+                <property name="password" value="7758521.djw"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+<!--        指定对应的mapper.xml文件-->
+        <mapper resource="mysql/UserMapper.xml"/>
+    </mappers>
+</configuration>

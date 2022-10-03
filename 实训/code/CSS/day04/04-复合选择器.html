@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复合选择器</title>
+    <style>
+        /* 后代选择器 */
+        ol li {
+            color: green;
+        }
+
+        ol li a {
+            color: chartreuse;
+        }
+
+        ul li {
+            color: pink;
+        }
+
+        ul li a {
+            color: yellowgreen;
+        }
+
+        /* 子元素选择器 */
+        /* 中间使用>号连接 */
+        div>p {
+            color: red;
+        }
+
+        div>p>a {
+            color: pink;
+        }
+
+        /* 并集选择器：使用逗号分割 */
+        /* 并集选择器习惯竖着写 */
+        /* 最后一个选择器后边不需要逗号 */
+        .xiong,
+        .xiong2,
+        .pig li {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <li>你好</li>
+    <ol>
+        <li>ol乔尼</li>
+        <li>ol杰洛</li>
+        <li>ol法伦泰</li>
+        <li><a href="#">DIO</a></li>
+
+    </ol>
+
+    <ul>
+        <li>ul乔尼</li>
+        <li>ul杰洛</li>
+        <li>ul法伦泰</li>
+        <li><a href="#">ul法伦泰</a></li>
+
+    </ul>
+
+    <div>
+        <p>大家好</p>
+        <p>
+            <a href="#">大家好</a>
+        </p>
+    </div>
+
+    <p>大家好</p>
+
+    <hr>
+    <div class="xiong">熊大</div>
+    <p class="xiong2">熊二</p>
+
+    <ul class="pig">
+        <li>佩奇</li>
+        <li>乔治</li>
+        <li>猪爸爸</li>
+    </ul>
+</body>
+
+</html>

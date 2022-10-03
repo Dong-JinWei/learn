@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>测试有参的call和apply方法</title>
+		<script>
+			function eat(food){
+				document.write(this.name + "正在吃" + food);
+				document.write("<br/>")
+			}
+			var person = {name:"张三"};
+			// 当调用含有this的方法时，会让第一个参数指向this
+			eat.call(person, "油泼面");
+			
+			// apply 方法的第二个参数是一个数组，其他用法和call方法一样
+			eat.apply(person, ["炸酱面"]);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

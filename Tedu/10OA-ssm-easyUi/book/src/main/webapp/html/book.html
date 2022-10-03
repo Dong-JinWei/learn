@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>图书信息管理</title>
+        <!-- 皮肤样式-->
+        <link rel="stylesheet" type="text/css"
+              href="../jeasyui/themes/bootstrap/easyui.css">
+        <!-- 图片样式-->
+        <link rel="stylesheet" type="text/css" href="../jeasyui/themes/icon.css">
+        <!-- jquery环境-->
+        <script src="../jeasyui/jquery.min.js"></script>
+        <!-- easyui的js环境-->
+        <script src="../jeasyui/jquery.easyui.min.js"></script>
+        <!-- 汉化js-->
+        <script src="../jeasyui/easyui-lang-zh_CN.js"></script>
+
+        <script>
+            $(function () {
+
+                //批量删除
+                $('#btn-remove').click(function () {
+                    console.log("remove")
+                    let arr = $('#dg').datagrid("getSelections");
+                    console.log('arr:' + arr)
+                    if (arr.length == 0) {
+                        $.messager.alert('消息', '请选择一条要删除的数据', 'error')
+                    } else {
+                        let bids = [];
+                        for (let i in arr) {
+                            bids.push(arr[i].bid);
+                        }
+                        $.post('../book/remove', {'bids[]': bids}, function (flag) {
+                            if (flag) {
+                                $.messager.alert('消息', '删除成功', 'info');
+                                $('#dg').datagrid("load");
+                            }
+                        })
+                    }
+                })
+
+                // 插入数据
+                $('#btn-add').click(function () {
+                    $('#add-dialog').dialog({
+                        closed: false,
+                        buttons: [{
+                            text: '保存',
+                            iconCls: 'icon-save',
+                            handler: function () {
+                                $("#add-form").form('submit', {
+                                    url: '../book/save',
+                                    onSubmit: function () {
+                                        return $('#add-form').form('validate');
+                                    },
+                                    success: function (flag) {
+                                        if (flag) {
+                                            $('#dg').datagrid('load');
+                                            $('#add-dialog').dialog({closed: true});
+                                            $.messager.alert("消息", '添加成功！', 'info')
+                                        }
+                                    }
+                                })
+                            }
+                        }, {
+                            text: '重置',
+                            iconCls: 'icon-redo',
+                            handler: function () {
+                                $('#add-form').form('clear');
+                            }
+                        }]
+                    })
+                })
+
+                /*查询框*/
+                $("#btn-search").click(function () {
+                    $('#dg').datagrid('load', {
+                        bname: $("#bname").val()
+                    })
+                })
+
+                // 表格数据
+                $('#dg').datagrid({
+                    url: '../book/findAll',
+                    fit: true,
+                    fitColumns: true,
+                    toolbar: '#tb',
+                    pagination: true,
+                    pagePosition: 'both',
+                    columns: [[
+                        {field: 'bid', title: '书籍id', checkbox: true},
+                        {field: 'bnum', title: '书籍编号', width: 80},
+                        {field: 'bname', title: '书名', width: 100},
+                        {field: 'price', title: '价格', width: 80},
+                        {field: 'author', title: '作者', width: 100},
+                        {field: 'ddesc', title: '描述', width: 120},
+                        {field: 'quantity', title: '数量', width: 100},
+                        {field: 'createtime', title: '创建时间', width: 120},
+                        {field: 'modifytime', title: '修改时间', width: 120}
+                    ]]
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <!--表格工具栏链接-->
+        <div id="tb">
+            <!-- 查询框-->
+            <table>
+                <tr>
+                    <td>
+                        <input id="bname" class="easyui-validatebox" placeholder="请输入书名查询">
+                        <a id="btn-search" href="#" class="easyui-linkbutton"
+                           data-options="iconCls:'icon-search',plain:'true'">查询</a>
+                    </td>
+                </tr>
+            </table>
+
+            <a id="btn-add" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">添加</a>
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true">修改</a>
+            <a id="btn-remove" href="#" class="easyui-linkbutton"
+               data-options="iconCls:'icon-remove',plain:true">删除</a>
+        </div>
+        <table id="dg"></table>
+
+
+        <!--修改信息框-->
+        <div id="edit-dialog" class="easyui-dialog" title="修改图书信息" closed="true"
+             style="width:400px;height:300px;">
+            <form id="edit-form" method="post">
+                <table>
+                    <tr>
+                        <td>图书编号：</td>
+                        <td>
+                            <input name="bnum" class="easyui-validatebox" placeholder="请输入图书编号"
+                                   data-options="required:true">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>书名：</td>
+                        <td>
+                            <input name="bname" class="easyui-validatebox" placeholder="请输入书名"
+                                   data-options="required:true">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>价格：</td>
+                        <td>
+                            <input name="price" class="easyui-validatebox" placeholder="请输入价格"
+                                   data-options="required:true">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>作者：</td>
+                        <td>
+                            <input name="author" class="easyui-validatebox" placeholder="请输入作者"
+                                   data-options="required:true">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>描述：</td>
+                        <td>
+                            <input name="ddesc" class="easyui-validatebox" placeholder="请输入描述"
+                                   data-options="required:true">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>数量：</td>
+                        <td>
+                            <input name="quantity" class="easyui-validatebox" placeholder="请输入数量"
+                                   data-options="required:true">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <!--添加信息框-->
+        <div id="add-dialog" class="easyui-dialog" title="添加图书信息" closed="true" style="width:400px;height:300px;">
+            <form id="add-form" method="post">
+                <table>
+                    <tr>
+                        <td>图书编号：</td>
+                        <td>
+                            <input name="bnum" class="easyui-validatebox" placeholder="请输入图书编号"
+                                   data-options="required:true">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>书名：</td>
+                        <td>
+                            <input name="bname" class="easyui-validatebox" placeholder="请输入书名"
+                                   data-options="required:true">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>价格：</td>
+                        <td>
+                            <input name="price" class="easyui-validatebox" placeholder="请输入价格"
+                                   data-options="required:true">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>作者：</td>
+                        <td>
+                            <input name="author" class="easyui-validatebox" placeholder="请输入作者"
+                                   data-options="required:true">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>描述：</td>
+                        <td>
+                            <input name="ddesc" class="easyui-validatebox" placeholder="请输入描述"
+                                   data-options="required:true">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>数量：</td>
+                        <td>
+                            <input name="quantity" class="easyui-validatebox" placeholder="请输入数量"
+                                   data-options="required:true">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>课后练习</title>
+		<script>
+			function changeImg(size){
+				let eva = document.getElementById("eva");
+				if (eva.width > 1920){
+					alert("已经是最大了")
+					eva.width = 1920;
+				}else if (eva.width < 100){
+					alert("已经是最小了")
+					eva.width = 100;
+				}else{
+					eva.width += size;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="放大" onclick="changeImg(100)">
+		<input type="button" value="缩小" onclick="changeImg(-100)">
+		<br />
+		<img id="eva" src="img/eva.png" width="800">
+	</body>
+</html>

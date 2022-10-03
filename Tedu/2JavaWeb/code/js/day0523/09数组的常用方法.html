@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数组的常用方法</title>
+		<script>
+			var arr = [23,5,1,17,6];
+			//给数组末尾添加元素
+			arr.push(888);
+			//删除末尾元素
+			arr.pop();
+			//给数组头部添加元素
+			arr.unshift(0);
+			//删除头部元素
+			arr.shift();
+			//改变显示数组的分隔符，注意没有对原数组进行修改
+			// document.write(arr.join("-"));
+			function c(o1,o2){
+				//升序
+				// return o1-o2;
+				// 降序
+				return o2-o1;
+			}
+			// 对数组进行排序，必须指定排序规则
+			// document.write(arr.sort(c));
+			// 反转数组
+			document.write(arr.reverse());
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>事件</title>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script>
+			$(function(){
+				// 单击事件
+				$("#b1").click(function(){
+					console.log("按钮被单击了");
+				})
+				
+				// 双击事件
+				$("#b2").dblclick(function(){
+					console.log("按钮被双击了");
+				})
+				
+				// 鼠标悬停
+				$(".d").mouseover(function(){
+					$(this).css("background-color","skyblue");
+				})
+				
+				// 鼠标离开
+				$(".d").mouseout(function(){
+					$(this).css("background-color","white");
+				})
+				
+				$("#year").change(function(){
+					console.log($(this).val());
+				})
+				
+			})
+			
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" value="点我" id="b1">
+		<input type="button" value="点我" id="b2">
+		<div class="d">大家好</div>
+		<select name="" id="year">
+			<option value="年">---年---</option>
+			<option value="2001">2001</option>
+			<option value="2002">2002</option>
+			<option value="2003">2003</option>
+			<option value="2004">2004</option>
+		</select>
+	</body>
+</html>

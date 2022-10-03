@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 业务处理对象 -->
+    <bean id="singer" class="cn.tedu.Singer"/>
+    <bean id="programmer" class="cn.tedu.Programmer"/>
+
+    <!-- 非业务处理对象 -->
+    <bean id="otherBefore" class="cn.tedu.OtherBefore"/>
+    <bean id="otherAfter" class="cn.tedu.OtherAfter"/>
+    <bean id="otherAround" class="cn.tedu.OtherAround"/>
+
+    <!-- 代理对象 -->
+    <bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="proxyInterfaces">
+            <array>
+                <value>cn.tedu.Play</value>
+            </array>
+        </property>
+
+        <property name="interceptorNames">
+            <list>
+                <value>otherBefore</value>
+                <value>otherAfter</value>
+                <value>otherAround</value>
+            </list>
+        </property>
+
+        <property name="targetName">
+            <value>singer</value>
+        </property>
+    </bean>
+</beans>

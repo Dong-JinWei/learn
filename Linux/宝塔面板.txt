@@ -1,0 +1,12 @@
+==================================================================
+Congratulations! Installed successfully!
+==================================================================
+外网面板地址: http://101.200.147.50:8888/1dbf1bb9
+内网面板地址: http://172.25.40.196:8888/1dbf1bb9
+username: 27k8y5np
+password: a0c238fc
+If you cannot access the panel,
+release the following panel port [8888] in the security group
+若无法访问面板，请检查防火墙/安全组是否有放行面板[8888]端口
+==================================================================
+Time consumed: 0 Minute!

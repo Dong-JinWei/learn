@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>测试行标签还是块标签</title>
+		<style>
+			/* 行标签 */
+			span {
+				/* 转换成块标签 */
+				display: block;
+				height: 30px;
+				margin: 50px;
+				background-color: blue;
+			}
+			/* 块标签 */
+			div {
+				/* 转换为行标签 */
+				/* display: inline; */
+				display: inline-block;
+				
+				height: 50px;
+				width: 50px;
+				background-color: red;
+				/* 下外边距 */
+				margin-bottom: 50px;
+			}
+			/* 行块标签 */
+			img {
+				/* 隐藏元素 */
+				display: none;
+				height: 80px;
+			}
+			
+			/* 块标签可以包含行标签，行标签不能包含块标签 */
+			/* 块标签可以设置上下外边距，行标签不能设置上下边距 */
+		</style>
+	</head>
+	<body>
+		<font>大家好</font>
+		<font>大家好</font>
+		<p>晚上好</p>
+		<p>晚上好</p>
+		
+		<a href="#">你好</a>
+		<a href="#">你好</a>
+
+		<h3>h3</h3>
+		<h3>h3</h3>
+		
+		<span>span</span>
+		<span>span</span>
+		
+		<div>div</div>
+		<div>div</div>
+		
+		<img src="img/Snipaste_2022-05-08_20-01-11.png"/>
+		<img src="img/Snipaste_2022-05-08_20-01-11.png"/>
+	</body>
+</html>

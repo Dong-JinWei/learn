@@ -1,0 +1,21 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.box{
+	width: auto;
+	height: 929px;
+	background: url(../img/微信图片_20220514105636.jpg);
+}
+
+.box .right{
+	width: 1300px;
+	height: 830px;
+}
+
+.box .right img{
+	width: 1300px;
+	height: 830px;
+	margin-top: 70px;
+}

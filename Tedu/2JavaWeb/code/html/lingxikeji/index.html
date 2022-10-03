@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>灵犀科技</title>
+		<link rel="stylesheet" href="css/common.css">
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<meta name="description" content="灵犀科技是一个科技类网站"/>
+		<meta name="keywords" content="灵犀,科技,研发,公司">
+		<style>
+			/* 居中 */
+			.container {
+				margin: 0 auto;
+				width: 1002px;
+				
+			}
+			
+			.header {
+				background-image: url(img/top_bg.jpg);
+				background-repeat: no-repeat;
+				height: 128px;
+				background-position: 0 3px;
+			}
+			
+			.header ul li {
+				float: left;
+				width: 90px;
+				margin-left: 1px;
+				text-align: center;
+				height: 37px;
+				line-height: 33px;
+			}
+			
+			.header ul li a {
+				display: block;
+				width: 90px;
+				height: 37px;
+				color: #363636;
+				border-radius: 5px;
+				transition: all 0.2s;
+			}
+			
+			.header ul li a:hover {
+			    color: white;
+			    background: url(img/nav_on.gif);				
+			}
+			
+			.ad {
+				margin: 6px 0;
+			}
+			
+			.main {
+				/* height: 481px; */
+				overflow: hidden;
+			}
+			
+			.main .left {
+				height: 480px;
+				width: 694px;
+				/* background-color: #f00; */
+				border: 1px solid #eee;
+				border-radius: 5px;
+				border-top: none;
+				float: left;
+			}
+			
+			.main .right {
+				float: right;
+				width: 294px;
+				/* background-color: #f00; */
+				height: 480px;
+			}
+			
+			.main .title {
+				height: 37px;
+				/* background-color: #f00; */
+				background-image: url(img/index_main_top_bg.gif);
+			}
+			
+			.main .title img {
+				margin: 5px 0 0 10px;
+				float: left;
+			}
+			
+			.main .title h1 {
+				float: left;
+				color: #151515;
+				font-size: 16px;
+				line-height: 37px;
+				margin-left: 10px;
+				font-weight: 100;
+			}
+			
+			.main .title a {
+				float: right;
+				line-height: 37px;
+				color: #888;
+				font: 12px/37px SimSun,serif;
+				
+			}
+			
+			.main .four {
+				width: 326px;
+				height: 200px;
+				background-color: #EEE;
+				float: left;
+				margin: 10px;
+			}
+			
+			.main .article {
+				width: 294px;
+				height: 155px;
+				background-color: #EEE;
+				margin-top: 1px;
+			}
+
+			.main .contact {
+				width: 294px;
+				height: 249px;
+				background-color: #EEE;
+				margin-top: 1px;
+			}
+			
+			.main .article a {
+				font-size: 12px;
+				line-height: 29px;
+				color: #888;
+				background: url(img/article_head.gif) no-repeat;
+				display: block;
+				height: 29px;
+				padding-left: 30px;
+			}
+			
+			
+			.main .four h2 {
+				color: #A0A0A0;
+				margin: 6px 0 6px 10px;
+				font-size: 16px;
+				font-family: 'Microsoft Yahei' , SimHei , sans-serif;
+			}
+			
+			.main .four img {
+				float: left;
+				background-color: white;
+				margin-left: 10px;
+				padding: 6px;
+			}
+			
+			.main .four ul {
+				float: left;
+				margin-left: 10px;
+			}
+			
+			.main .four li {
+				background-image: url(img/service_intro_bg.gif);
+				background-repeat: no-repeat;
+				padding-left: 10px;
+				height: 20px;
+				background-position: 0px 5px;
+			}
+			
+			.main .four a {
+				font-size: 12px;
+				color: #888;
+			}
+			
+			.main .four ul li a:hover {
+				color: #FF832C;;
+			}
+			
+			.main .four a:visited {
+				color: #808080;
+			}
+			
+			.foot {
+				margin-top: 15px;
+				height: 120px;
+			}
+			
+			.foot li {
+				font-size: 12px;
+				float: left;
+				width: 90px;
+				margin-top: 15px;
+				margin-right: 10px;
+			}
+			
+			.main .article ul li a:hover {
+				color: #FF832C;
+				background: url(img/article_on_bg.gif);
+			}
+			
+			.foot {
+				margin-top: 15px;
+				height: 120px;
+			}
+			
+			.foot ul {
+				height: 40px;
+				background: #eee;
+				padding-left: 50px;
+			}
+			
+			.foot li {
+				font-size: 12px;
+				float: left;
+				width: 90px;
+				margin-top: 15px;
+				margin-right: 10px;
+				line-height: 10px;
+			}
+			
+			.foot a:hover {
+				color: #FF832C;
+			}
+			
+			.foot div {
+			    margin-top: 10px;
+			    font-size: 12px;
+			    font-family: '微软雅黑',sans-serif;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<!-- 准备一个大的div，让其居中，然后它内部的所有div都会居中 -->
+		
+		<!-- 容器div开始 -->
+		<div class="container">
+			<!-- 头部开始 -->
+			<div class="header">
+				<img src="img/logo.jpg" alt="">
+				<!-- ul>li*7>a{导航$} -->
+				<ul>
+					<li><a href="#" target="_blank">导航1</a></li>
+					<li><a href="#" target="_blank">导航2</a></li>
+					<li><a href="#" target="_blank">导航3</a></li>
+					<li><a href="#" target="_blank">导航4</a></li>
+					<li><a href="#" target="_blank">导航5</a></li>
+					<li><a href="#" target="_blank">导航6</a></li>
+					<li><a href="#" target="_blank">导航7</a></li>
+				</ul>
+			</div>
+			<!-- 头部结束 -->
+
+			
+			<!-- 广告开始 -->
+			<div class="ad">
+				<img src="img/about_banner.jpg" alt="">
+			</div>
+			<!-- 广告结束 -->
+			
+			<!-- 主体开始 -->
+			<div class="main">
+				<!-- 左侧div开始 -->
+				<div class="left">
+					<!-- 标题div开始 -->
+					<div class="title">
+						<img src="img/circle.gif" alt="">
+						<h1>核心业务</h1>
+						<a href="#" target="_blank">MORE>></a>
+					</div>
+					<!-- 标题div结束 -->
+					
+					<!-- 左侧四个div开始 -->
+					<div class="four">
+						<h2>电子商务类网站建设</h2>
+						<img src="img/eshop_service.jpg" alt="">
+						<ul>
+							<li><a href="#" target="_blank">方便的顶端管理1</a></li>
+							<li><a href="#" target="_blank">方便的顶端管理2</a></li>
+							<li><a href="#" target="_blank">方便的顶端管理3</a></li>
+							<li><a href="#" target="_blank">方便的顶端管理4</a></li>
+							<li><a href="#" target="_blank">方便的顶端管理5</a></li>
+						</ul>
+					</div>
+					<div class="four">
+						<h2>电子商务类网站建设</h2>
+						<img src="img/eshop_service.jpg" alt="">
+						<ul>
+							<li><a href="#" target="_blank">方便的顶端管理1</a></li>
+							<li><a href="#" target="_blank">方便的顶端管理2</a></li>
+							<li><a href="#" target="_blank">方便的顶端管理3</a></li>
+							<li><a href="#" target="_blank">方便的顶端管理4</a></li>
+							<li><a href="#" target="_blank">方便的顶端管理5</a></li>
+						</ul>
+					</div>
+					<div class="four">
+						<h2>电子商务类网站建设</h2>
+						<img src="img/eshop_service.jpg" alt="">
+						<ul>
+							<li><a href="#" target="_blank">方便的顶端管理1</a></li>
+							<li><a href="#" target="_blank">方便的顶端管理2</a></li>
+							<li><a href="#" target="_blank">方便的顶端管理3</a></li>
+							<li><a href="#" target="_blank">方便的顶端管理4</a></li>
+							<li><a href="#" target="_blank">方便的顶端管理5</a></li>
+						</ul>
+					</div>
+					<div class="four">
+						<h2>电子商务类网站建设</h2>
+						<img src="img/eshop_service.jpg" alt="">
+						<ul>
+							<li><a href="#" target="_blank">方便的顶端管理1</a></li>
+							<li><a href="#" target="_blank">方便的顶端管理2</a></li>
+							<li><a href="#" target="_blank">方便的顶端管理3</a></li>
+							<li><a href="#" target="_blank">方便的顶端管理4</a></li>
+							<li><a href="#" target="_blank">方便的顶端管理5</a></li>
+						</ul>
+					</div>
+					<!-- 左侧四个div结束 -->
+				</div>
+				<!-- 左侧div结束 -->
+				
+				<!-- 右侧div开始 -->
+				<div class="right">
+					<!-- 标题div开始 -->
+					<div class="title">
+						<img src="img/circle.gif" alt="">
+						<h1>文章观点</h1>
+						<a href="#" target="_blank">MORE>></a>
+					</div>
+					<!-- 标题div结束 -->
+					<!-- 文章观点开始 -->
+					<div class="article">
+						<ul>
+							<li><a href="">这是一篇好文章1</a></li>
+							<li><a href="">这是一篇好文章2</a></li>
+							<li><a href="">这是一篇好文章3</a></li>
+							<li><a href="">这是一篇好文章4</a></li>
+							<li><a href="">这是一篇好文章5</a></li>
+						</ul>
+					</div>
+					<!-- 文章观点结束 -->
+					
+					<!-- 标题div开始 -->
+					<div class="title">
+						<img src="img/circle.gif" alt="">
+						<h1>联系我们</h1>
+						<a href="#" target="_blank">MORE>></a>
+					</div>
+					<!-- 标题div结束 -->
+
+					<!-- 练习我们开始 -->
+					<div class="contact"></div>
+					<!-- 练习我们结束 -->
+				</div>
+				<!-- 右侧div结束 -->
+			</div>
+			<!-- 主体结束 -->
+			
+			<!-- 底部开始 -->
+			<div class="foot">
+				<ul>
+					<li><a href="">联系我们1</a></li>
+					<li><a href="">联系我们2</a></li>
+					<li><a href="">联系我们3</a></li>
+					<li><a href="">联系我们4</a></li>
+					<li><a href="">联系我们5</a></li>
+					<li><a href="">联系我们6</a></li>
+					<li><a href="">联系我们7</a></li>
+				</ul>
+				<div>
+					&copy;2006-2016 北京市灵犀慧通科技有限公司 版权所有 http://www.lionhit.com 京ICP备07020337号
+				</div>
+			</div>
+			<!-- 底部结束 -->
+		</div>
+		<!-- 容器div结束 -->
+	</body>
+</html>

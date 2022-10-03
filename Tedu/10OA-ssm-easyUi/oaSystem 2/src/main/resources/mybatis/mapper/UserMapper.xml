@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 用户表的映射文件 namespace值为对应接口的全路径 -->
+<mapper namespace="com.tedu.dao.UserDao">
+
+    <!--添加用户数据-->
+    <insert id="save">
+        insert into tb_user(uname,nickname,password,createtime)
+        values(#{uname},#{nickName},#{password},now())
+    </insert>
+    <!--修改用户数据-->
+    <update id="edit">
+        update  tb_user
+            set uname=#{uname},nickname=#{nickName},password=#{password},images=#{images},modifytime=now()
+        where uid =#{uid}
+    </update>
+    <!--批量删除用户数据-->
+    <update id="remove">
+        update tb_user set deleted = 1 where uid in 
+        <foreach collection="list" item="item"
+                 index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+
+    </update>
+    <!--分页查询，条件查询用户数据-->
+    <select id="findAll" resultType="com.tedu.pojo.User">
+        select * from tb_user
+        <where>
+            <if test="uname!=null and uname!=''">
+                uname like '%${uname}%'
+            </if>
+            and deleted = 0
+        </where>
+        limit #{page},#{rows}
+    </select>
+    <!--统计用户记录数量-->
+    <select id="count" resultType="java.lang.Integer">
+        select count(*) from tb_user
+        where deleted=0
+    </select>
+    <!--按照用户id查询数据-->
+    <select id="getUserById" resultType="com.tedu.pojo.User">
+        select * from tb_user where uid = #{uid}
+    </select>
+
+
+</mapper>

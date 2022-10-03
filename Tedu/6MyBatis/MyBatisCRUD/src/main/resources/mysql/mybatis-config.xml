@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="mysql/mysql.properties"> </properties>
+
+    <settings>
+        <!--下划线和驼峰命名发法互相转换 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <environments default="mysql">
+        <!--配置连接数据库的信息-->
+        <environment id="mysql">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--                加载驱动-->
+<!--                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>-->
+                <property name="driver" value="${mysql.driverClassName}"/>
+                <!-- &要使用&amp;-->
+<!--                <property name="url" value="jdbc:mysql://localhost:3306/dowei?serverTimezone=GMT&amp;characterEncoding=utf8"/>-->
+                <property name="url" value="${mysql.url}"/>
+                <!--                用户名-->
+<!--                <property name="username" value="root"/>-->
+                <property name="username" value="${mysql.username}"/>
+                <!--                密码-->
+<!--                <property name="password" value="7758521.djw"/>-->
+                <property name="password" value="${mysql.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!--        指定对应的mapper.xml文件-->
+        <mapper resource="mysql/StudentMapper.xml"/>
+        <mapper resource="mysql/ResulMapMapper.xml"/>
+
+    </mappers>
+
+
+
+</configuration>

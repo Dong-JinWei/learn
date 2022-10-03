@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script>
+        //document.write($);
+        function showUser() {
+            let username = document.getElementById("username").value;
+            alert(username);
+            // 这里可以看出，jQuery比js书写简单
+            alert($("#username").val());
+        }
+
+    </script>
+</head>
+<body>
+<input id="username" name="username" type="text"/>
+<input onclick="showUser()" type="button" value="点我"/>
+</body>
+</html>

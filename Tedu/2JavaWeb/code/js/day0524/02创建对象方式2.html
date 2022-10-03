@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>创建对象方式2</title>
+		<script>
+			// 通过构造方法创建对象
+			function Dog(name, age){
+				this.name = name;
+				this.age = age;
+				this.eat = function(){
+					document.write("eat food");
+				}
+			}
+			
+			var dog = new Dog("aDog", 2);
+			// document.write(dog);//[object Object]
+			// 如果想观察对象中有哪些属性，通过console.log来查看
+			console.log(dog);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

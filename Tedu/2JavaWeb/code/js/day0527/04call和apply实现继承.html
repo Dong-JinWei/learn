@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>call和aplly实现继承</title>
+		<script>
+			var Father = function(){
+				this.money = "100000元";
+				this.house = "10套房";
+				this.eat = function(){
+					document.write("吃东西<br/>");
+				}
+			}
+			var Son = function(){
+				// 此时Son的this指向了Father的this
+				Father.call(this)
+				// Father.apply(this);
+			}
+			var son = new Son();
+			document.write(son.money + "<br/>");
+			document.write(son.house + "<br/>");
+			son.eat();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

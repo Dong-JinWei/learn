@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>方向的简写形式</title>
+		<style>
+			.d {
+				width: 300px;
+				height: 300px;
+				background-color: red;
+				border: 10px solid blue;
+				/* 如果有一个值，代表：上下左右 表示设置四条边的属性 */
+				border-color: green;
+				
+				/* 如果有两个值代表：上下 左右 */
+				border-color: green yellow;
+				
+				/* 三个值：上 左右 下 */
+				border-color: green black yellow;
+				
+				/* 四个值：上 右 下 左 */
+				/* 适用于marging和padding */
+				border-color: green black yellow pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="d"></div>
+	</body>
+</html>

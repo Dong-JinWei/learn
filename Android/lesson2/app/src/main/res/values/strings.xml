@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">lesson2</string>
+    <string name="hello_world">hello,world</string>
+    <string name="_1">按钮1</string>
+</resources>

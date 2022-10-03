@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.book.app.dao.TbBookDao">
+
+
+    <resultMap id="book" type="com.book.app.entity.TbBook">
+        <id property="bid" column="bid"/>
+        <result property="bnum" column="bnum"/>
+        <result property="bname" column="bname"/>
+        <result property="price" column="price"/>
+        <result property="author" column="author"/>
+        <result property="instruction" column="instruction"/>
+        <result property="quantity" column="quantity"/>
+        <result property="createtime" column="createtime"/>
+        <result property="modifytime" column="modifytime"/>
+        <result property="deleted" column="deleted"/>
+        <association property="category" javaType="com.book.app.entity.TbCategory">
+            <id property="cateid" column="cateid"/>
+            <result property="catename" column="catename"/>
+        </association>
+    </resultMap>
+
+    <insert id="save">
+        insert into tb_book(bnum, bname, price, author, instruction, quantity, createtime, cateid)
+        VALUES (#{bnum}, #{bname}, #{price}, #{author}, #{instruction}, #{quantity}, now(), #{category.cateid})
+    </insert>
+
+    <update id="update">
+        update tb_book
+        set bnum        = #{bnum},
+            bname       = #{bname},
+            price       = #{price},
+            author      = #{author},
+            instruction = #{instruction},
+            quantity    = #{quantity},
+            modifytime  = now(),
+            cateid      = #{category.cateid}
+        where bid = #{bid}
+    </update>
+
+    <update id="updateQuantity">
+        update tb_book
+        set quantity = #{quantity}
+        where bid = #{bid}
+    </update>
+
+    <select id="listPage" resultMap="book">
+        select *
+        from tb_book tb
+        left join tb_category tc on tb.cateid = tc.cateid
+        <where>
+            <if test="bname!= null and bname != ''">
+                tb.bname like '%${bname}%'
+            </if>
+            and tb.deleted = 0
+        </where>
+        limit ${page}, ${size}
+    </select>
+    <select id="count" resultType="java.lang.Integer">
+        select count(*)
+        from tb_book tb
+        left join tb_category tc on tb.cateid = tc.cateid
+        <where>
+            <if test="bname!= null and bname != ''">
+                tb.bname like '%${bname}%'
+            </if>
+            and tb.deleted = 0
+        </where>
+    </select>
+    <select id="getAllQuantity" resultType="java.lang.Integer">
+        select sum(quantity) as tbtotal
+        from tb_book
+        WHERE deleted = 0
+    </select>
+    <select id="getCateNum" resultType="com.book.app.entity.PieData">
+        select scate.sumquan as value, tc.catename as name
+        from (select cateid, sum(quantity) as sumquan from tb_book GROUP BY cateid) as scate
+                 LEFT JOIN tb_category tc
+                           on scate.cateid = tc.cateid
+        where deleted = 0
+    </select>
+
+
+</mapper>

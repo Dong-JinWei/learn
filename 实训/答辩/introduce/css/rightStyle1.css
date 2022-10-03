@@ -1,0 +1,45 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.box{
+	width: auto;
+	height: 929px;
+	background: url(../img/微信图片_20220514105636.jpg);
+	overflow: hidden;
+}
+
+.box .t1{
+	width: 1000px;
+	height: 200px;
+	/* background-color: pink; */
+	margin-top: 30px;
+}
+.box .t2{
+	width: 1000px;
+	height: 200px;
+	/* background-color: pink; */
+	margin-top: 30px;
+}
+
+.box .t3{
+	width: 1000px;
+	height: 200px;
+	/* background-color: pink; */
+	margin-top: 30px;
+}
+
+.box .t4{
+	width: 1000px;
+	height: 200px;
+	/* background-color: pink; */
+	margin-top: 30px;
+}
+
+.box div p{
+	color: #fff;
+	font-size: 25px;
+	margin-top: -130px;
+	margin-left: 240px;
+}

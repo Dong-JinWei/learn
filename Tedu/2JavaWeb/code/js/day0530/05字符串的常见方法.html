@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>字符串的常见方法</title>
+		<script>
+			let str = "helloworldxxxxxxx";
+			// 返回指定下标的字符
+			document.write(str.charAt(0) + "<br/>");
+			// 返回字符串第一次出现的位置
+			document.write(str.indexOf("o") + "<br/>");
+			// 返回字符串最后一次出现的位置
+			document.write(str.lastIndexOf("o")+ "<br/>");
+			// 替代指定的字符，默认一次只能替换一个，第一次出现的
+			document.write(str.replace("o","x") + "<br/>");
+			// 如果想替代多个字符，需要使用正则表达式
+			document.write(str.replace(/o/g,"x") + "<br/>");
+			// 截取字符串，从3开始，截取10个，表示范围，一般都是包头不包伟
+			document.write(str.substring(3,10) + "<br/>");
+			// 截取从指定下标值开始的n个字符
+			document.write(str.substr(3,10) + "<br/>");
+			
+			// 全部转换为大写
+			document.write(str.toUpperCase() + "<br/>");
+			// 全部转换为小写
+			document.write(str.toLocaleLowerCase() + "<br/>");
+			// 按照指定字符切割字符串
+			var tel = "029-88899900-8-1";
+			var tels = tel.split("-");
+			document.write(tels + "<br/>"); // 返回一个数组
+			document.write(tels[0] + "<br/>");
+			var n1 = "大家好";
+			var n2 = "吃了吗";
+			// 拼接字符串
+			document.write(n1.concat(n2)+ "<br/>");
+			var str3 = "    hello   ";
+			// 去掉字符串的前后空格，如果想去掉全部空格，可以已使用正则表达式
+			document.write(str3.trim() + "!" + "<br/>");
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

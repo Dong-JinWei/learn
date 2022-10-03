@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS字体属性之字体粗细</title>
+    <style>
+        .bold {
+            /* font-weight:bold */
+            /* 700的这个值后面不要跟单位，等价于bold这个加粗效果 */
+            /* font-weight: 700; */
+            font-weight: bold;
+        }
+        h2 {
+            /* font-weight: normal; */
+            /* 实际开发当中，我们提倡使用数字，表示加粗或是变细 */
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <h2>清明</h2>
+    <p>杜牧</p>
+    <p>清明时节雨纷纷，</p>
+    <p>路上行人欲断魂。</p>
+    <p class="bold">借问酒家何处有，</p>
+    <p>牧童遥指杏花村。</p>
+</body>
+</html>

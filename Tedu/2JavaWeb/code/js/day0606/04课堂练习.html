@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>课堂练习</title>
+		<script>
+			function checkAll(){
+				var hobbys = document.getElementsByName("hobby");
+				for (var hobby of hobbys){
+					hobby.checked = true;
+				}
+			}
+			function reCheck(){
+				var hobbys = document.getElementsByName("hobby");
+				for (var hobby of hobbys){
+					// if(hobby.checked == true ){
+					// 	hobby.checked = false;
+					// }else {
+					// 	hobby.checked = true;
+					// }
+					hobby.checked = !hobby.checked;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		兴趣爱好：
+		<input type="checkbox" name="hobby" value="篮球">篮球
+		<input type="checkbox" name="hobby" value="足球">足球
+		<input type="checkbox" name="hobby" value="羽毛球">羽毛球
+		<input type="checkbox" name="hobby" value="乒乓球">乒乓球
+		<input type="checkbox" name="hobby" value="台球">台球
+		<br/>
+		<input type="button" onclick="checkAll()" value="全选">
+		<input type="button" onclick="reCheck()" value="反选">
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>查找子元素</title>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script>
+			function f1(){
+				// 获取当前元素的直接子元素
+				// $(".d1").children().css("background-color", "red");
+				// 获取当前元素指定的子元素
+				// $(".d1").children(".d3").css("background-color", "red");
+				
+				// 查找指定元素的所有子元素
+				// 使用时要指定参数来缩减范围
+				$("body").find(".d1").css("background-color", "red");
+			}
+		</script>
+	</head>
+	<body>
+		<div>啦啦啦啦啦</div>
+		<div class="d1" style="width: 300px; height: 300px;">
+			大家好
+			<div class="d2" style="background-color: blue;">
+				晚上好
+			</div>
+			<div class="d3" style="background-color: blue;">
+				晚上好
+			</div>
+		</div>
+		<input type="button" value="点我" onclick="f1()">
+	</body>
+</html>

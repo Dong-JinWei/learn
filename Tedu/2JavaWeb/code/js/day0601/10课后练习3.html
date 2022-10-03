@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		</style>
+	</head>
+	<body>
+		<input type="button" value="背景图片1" onclick="chageBg1()">
+		<input type="button" value="背景图片2" onclick="chageBg2()">
+		<input type="button" value="背景图片3" onclick="chageBg3()">
+	</body>
+	<script>
+		// 3. 给页面添加三个按钮，每次点击按钮都会改变页面的背景图片
+		document.body.style.backgroundSize = "100%";
+		document.body.style.backgroundRepeat = "no-repeat";
+		function chageBg1() {
+			document.body.style.backgroundImage = "url(img/eva.png)";
+		}
+
+		function chageBg2() {
+			document.body.style.backgroundImage = "url(img/kira.jpg)";
+		}
+
+		function chageBg3() {
+			document.body.style.backgroundImage = "url(img/p.jpg)";
+		}
+	</script>
+</html>

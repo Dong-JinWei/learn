@@ -1,0 +1,161 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+#All{
+	height: auto;
+}
+/* part1 */
+#header{
+	position: relative;
+	height: 80px;
+}
+/* part1 元素 */
+#header_inner{
+	padding-top: 18px;
+	position: relative;
+	width: 960px;
+	margin: auto;
+}
+/* part1 右侧菜单 */
+#main_menu{
+	position: absolute;
+	top: 30px;
+	right: 0;
+}
+/* part1右侧菜单 菜单项 */
+#main_menu>ul>li{
+	position: relative;
+	list-style-type: none;
+	display: inline-block;
+	float: left;
+	margin-left: 100px;
+}
+#header a{
+	color: #966;
+	text-decoration: none;
+}
+#header a:hover{
+	text-decoration: underline;
+}
+/* part2 */
+#body{
+	position: relative;
+	width: 100%;
+	margin: auto;
+}
+/* 背景图片覆盖方式 */
+#background{
+	background-size: cover;
+}
+/* part2 点击按钮 */
+#click{
+	width: 308px;
+	height: 107px;
+	position: absolute;
+	left: 50%;
+	margin-left: -154px;
+	top: 639px;
+	background-color: #fc7eab;
+	border: solid 5px white;
+	border-radius: 65px;
+}
+#click img{
+	position: absolute;
+	left: 50%;
+	margin-left: -108px;
+}
+#click:hover{
+	background-color: #FF689A;
+}
+/* part3 整块区域 */
+.centerbox{
+	position: relative;
+	margin: auto;
+	width: 960px
+}
+/* part3内部两部分 */
+#newsbox,#newsbox2{
+	padding-top: 50px;
+	/* display: block; */
+	float: left;
+}
+/* 日期 */
+#newsbox .date,#newsbox2 .date{
+	display: inline-block;
+	width: 150px;
+	font-weight: 700;
+	font-family: 幼圆,sans-serif;
+	color: #ff8c54;
+}
+/* 新闻 */
+#newsbox a,#newsbox2 a{
+	color: #966;
+	text-decoration: none;
+}
+#newsbox ul,#newsbox2 ul{
+	padding-top: 20px;
+}
+#newsbox li,#newsbox2 li{
+	border-bottom: dotted 1px #f1e4cf;
+	padding: 15px;
+	list-style-type: none;
+}
+/* part3 newsbox1+newsbox2部分 */
+#row{
+	width: 960px;
+	height: 360px;
+	margin: auto;
+	padding-bottom: 0;
+}
+/* part3 两部分间距 */
+#newsbox2{
+	padding-left: 195px;
+}
+/* 右侧计数器 */
+#count{
+	padding: 80px 0;
+	}
+#count img{
+	background-color: aqua;
+	border-radius: 10px;
+	}
+/* 标题下划线 */
+#newsbox h2,#newsbox2 h2{
+	border-bottom: solid 4px #fc7eab;
+	margin-bottom: 0;
+}
+#newsbox ul li a font:hover{
+	text-decoration: underline;
+}
+#newsbox2 ul li a font:hover{
+	text-decoration: underline;
+}
+/* part4 */
+#bigbuttombox{
+	background-color: #f5ebdb;
+	padding: 50px 0;
+	text-align: center;
+}
+#bigbuttombox li{
+	display: inline-block;
+	padding-left: 30px;
+}
+#bigbuttombox ul li a img{
+	border: solid 10px white;
+	border-radius: 50%;
+}
+#bigbuttombox ul li a img:hover{
+	opacity: 0;
+}
+/* part5 */
+#footer{
+	background-color: #fff;
+	padding: 20px 0;
+	text-align: center;
+}
+#footer .name{
+	font-size: 12px;
+	color: #966;
+}

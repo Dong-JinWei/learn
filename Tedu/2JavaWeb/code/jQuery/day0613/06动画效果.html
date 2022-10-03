@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+       <html>
+       	<head>
+       		<meta charset="utf-8">
+       		<title></title>
+       		<style>
+       			.d {
+       				width: 300px;
+       				height: 300px;
+       				background-color: skyblue;
+       			}
+       		</style>
+       		<script src="js/jquery-1.8.3.min.js"></script>
+       		<script>
+       			function f() {
+       				// 毫秒数，当动画执行完毕时，执行动画
+       				// 隐藏
+       				$(".d").hide(3000, function() {
+       					alert("隐藏执行完毕")
+       				});
+       			}
+
+       			function show() {
+       				// 显示
+       				$(".d").show(3000, function() {
+       					alert("方大执行完毕")
+       				});
+       			}
+
+       			function f2() {
+       				// 隐藏或者显示指定的元素
+       				$(".d").toggle(3000, function() {
+       					//当动画执行完毕时执行对应的代码
+       					// alert("执行完毕");
+       				})
+       			}
+       		</script>
+       	</head>
+       	<body>
+       		<input type="button" value="click" onclick="f()">
+       		<input type="button" value="showClick" onclick="show()">
+       		<input type="button" value="toggle" onclick="f2()">
+       		<div class="d"></div>
+       	</body>
+       </html>

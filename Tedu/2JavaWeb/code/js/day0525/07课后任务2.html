@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>课后任务2</title>
+		<script>
+			/**
+			 * 测试奶奶，妈妈，女儿，三层继承关系
+			 */
+			
+			var Grandma = function(){
+				this.name = "奶奶";
+				this.heirloom = "传家手镯";
+				this.maker = function(){
+					document.write("祖传手艺：编草鞋" + "<br/>");
+				}
+			}
+			var Mother = function(){
+				this.name = "妈妈";
+			}
+			Mother.prototype = new Grandma();
+			var Daughter = function(){
+				this.name = "女儿";
+				this.maker = function(){
+					document.write("背井离乡：学编程中")
+				}
+			}
+			Daughter.prototype = new Mother();
+			
+			var grandma = new Grandma();
+			document.write(grandma.name + "<br/>");
+			document.write(grandma.heirloom + "<br/>");
+			grandma.maker();
+			document.write("<hr/>")
+			
+			var mother = new Mother();
+			document.write(mother.name + "<br/>");
+			document.write(mother.heirloom + "<br/>");
+			mother.maker();
+			document.write("<hr/>")
+			
+			var daughter = new Daughter();
+			document.write(daughter.name + "<br/>");
+			document.write(daughter.heirloom + "<br/>");
+			daughter.maker();
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

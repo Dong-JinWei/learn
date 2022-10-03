@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--接口的包名及路径-->
+<mapper namespace="cn.tedu.mapper.UserMapperMore">
+    <insert id="insertUserMore">
+        INSERT INTO user_table VALUES(#{param1}, #{param2})
+    </insert>
+
+    <insert id="insertUserMoreParam">
+        INSERT INTO user_table VALUES(#{uName}, #{uPassword})
+    </insert>
+
+    <update id="updateUserMore">
+        update user_table set u_password=#{uPassword} where u_name=#{uName}
+    </update>
+
+    <update id="updateUserMoreParam">
+        update user_table set u_password=#{user.uPassword} where u_name=#{user.uName}
+    </update>
+
+    <delete id="deleteUserMoreParam">
+        delete from user_table where u_name=#{user.uName}
+    </delete>
+
+
+<!--    public int updateUserMoreMap(Map<String , Object> map);-->
+    <update id="updateUserMoreMap">
+        update user_table set u_password=#{uPassword} where u_name=#{uName}
+    </update>
+
+<!--    public int updateUserMoreMapParam(@Param("map") Map<String, Object> map);-->
+    <update id="updateUserMoreMapParam">
+        update user_table set u_password=#{map.uPassword} where u_name=#{map.uName}
+    </update>
+
+
+<!--    public int insertUserMoreList(@Param("userList") List<String> list);-->
+    <insert id="insertUserMoreList">
+        insert into user_table values(#{userList[0]}, #{userList[1]})
+    </insert>
+
+</mapper>

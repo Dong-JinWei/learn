@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07-浮动元素搭配标准流父盒子2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 1226px;
+            height: 285px;
+            background-color: pink;
+            margin: 0px auto;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .box li {
+            width: 296px;
+            height: 285px;
+            background-color: purple;
+            float: left;
+            margin-left: 14px;
+            margin-right: 0;
+        }
+
+        .box .last {
+            /* margin-right: 0; */
+        }
+
+        /* 需要注意第一个div左边的边距，需要设置为0 */
+        .box .first {
+            margin-left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="box">
+        <li class="first">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li class="last">4</li>
+    </ul>
+
+</body>
+
+</html>

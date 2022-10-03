@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>对象冒充</title>
+		<script>
+			var Father = function(){
+				this.money = 100000;
+				this.house = "10套房"
+				this.eat = function(){
+					document.write("吃山珍海味<br/>");
+				}
+			}
+			Father.prototype.car = "10辆车";
+			var Son = function(){
+				// 1.让Father成为Son的属性
+				this.Father = Father;
+				// 2. 调用Father的构造方法，改变this的指向
+				// Son中的this指向Father中的this
+				this.Father();
+				// 3. 删除Father属性；
+				delete this.Father;
+			}
+			var son = new Son();
+			document.write(son.money + "<br/>");
+			document.write(son.house + "<br/>");
+			// 无法访问父类原型上的属性
+			document.write(son.car + "<br/>");
+			son.eat();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

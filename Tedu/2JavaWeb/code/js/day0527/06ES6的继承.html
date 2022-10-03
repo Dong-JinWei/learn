@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ES6继承</title>
+		<script>
+			// 在ES6中，可以通过class来定义类
+			// js中没有访问修饰符
+			class Person{
+				// 在js中，静态属性，只能通过类名来访问
+				static address = "西安";
+				// 属性一般都写在构造方法中
+				constructor(name, age){
+					this.name = name;
+					this.age = age;
+				}
+				// 定义方法，注意不要书写function
+				eat(){
+					document.write(this.name + "正在吃饭");
+				}
+			}
+			
+			class Son extends Person{
+				constructor(name, age){
+					super(name, age);
+				}
+			}
+			var son = new Son("张三", 30);
+			document.write(son.name);
+			document.write("<br/>");
+			document.write(son.age);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

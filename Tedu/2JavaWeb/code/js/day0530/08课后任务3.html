@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			// 3.输入用户名和密码，如果用户名是admin，密码是abc123显示登录成功，否则显示登录失败
+			var userName = prompt("请输入用户名");
+			var pwd = prompt("请输入密码");
+			if (userName == "admin" && pwd == "abc123"){
+				document.write("登录成功")
+			}else {
+				document.write("登录失败" + "<br/>")
+				document.write("请检查用户名是否正确：" + userName + "<br/>")
+				document.write("请检查密码是否正确：" + pwd + "<br/>")
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

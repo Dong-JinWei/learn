@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>课后任务4</title>
+		<script>
+			// 汽车制造厂生产汽车
+			var carFactory = {name:"环球汽车制造有限公司", getCar:function(){
+				return [{carName:"小米汽车", price:99999}, {carName:"苹果汽车", price:999999}];
+			}}
+			
+			var cars = carFactory.getCar();
+			document.write("制造商：", carFactory.name + "<br/>");
+			document.write("年轻人的第一台性能车：" + cars[0].carName + " 价格：" + cars[0].price + "<br/>");
+			document.write("苹果环保汽车（自费购买车辆其他配件）：" + cars[1].carName + " 价格：" + cars[1].price + "<br/>");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

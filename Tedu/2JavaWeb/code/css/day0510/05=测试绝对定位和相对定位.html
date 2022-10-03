@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>测试绝对定位和相对定位</title>
+		<style>
+			.d1 {
+				width: 800px;
+				height: 800px;
+				background-color: red;
+				float: right;
+				/* 子绝父相：子元素使用绝对定位，父元素使用相对定位 */
+				/* 绝对定位的默认才考点时浏览器的左上角，如果父级元素使用了相对定位 */
+				/* 或绝对定位时，可以改变参考点为父级元素的左上角 */
+				position: relative;
+			}
+			.d2 {
+				/* 参考点会变成浏览器 */
+				position: absolute;
+				width: 300px;
+				height: 300px;
+				background-color: blue;
+				top: 10px;
+				left: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="d1">
+			<div class="d2">
+				
+			</div>
+		</div>
+	</body>
+</html>

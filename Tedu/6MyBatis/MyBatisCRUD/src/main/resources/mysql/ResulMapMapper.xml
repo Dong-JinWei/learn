@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--接口的包名及路径-->
+<mapper namespace="com.tedt.mapper.ResultMapMapper">
+
+    <!-- public Student findStudentById(Integer id); -->
+    <select id="findStudentById" resultMap="studentResultMap">
+        select s_id, s_name, s_pwd
+        from t_student
+        where s_id = #{id}
+    </select>
+
+    <resultMap id="studentResultMap" type="com.tedt.bean.Student">
+        <id property="sId" column="s_id"/>
+        <result property="sName" column="s_name"/>
+        <result property="sPwd" column="s_pwd"/>
+    </resultMap>
+
+
+    <!-- public Map<String, Object> findPartById(@Param("id") Integer sId); -->
+    <select id="findPartById" resultType="java.util.Map">
+        select s_name, s_pwd
+        from t_student
+        where s_id = #{id}
+    </select>
+
+    <!-- public List<Student> findAll(); -->
+    <select id="findAll" resultMap="studentResultMap">
+        select *
+        from t_student
+    </select>
+
+    <!-- public int insertStudent(@Param("stu") Student student); -->
+    <insert id="insertStudent" useGeneratedKeys="true" keyColumn="s_id" keyProperty="sId">
+        insert into t_student
+        values (#{stu.sId}, #{stu.sName}, #{stu.sPwd})
+    </insert>
+
+
+</mapper>

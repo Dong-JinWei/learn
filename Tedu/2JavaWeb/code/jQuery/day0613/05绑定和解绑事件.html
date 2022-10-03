@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>绑定和解绑事件</title>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script>
+			$(function(){
+				// 动态绑定事件
+				$("#b1").bind("click", function(){
+					console.log("单击事件");
+				});
+				
+				// 动态解绑事件
+				$("#b1").unbind("click");
+				
+				$("#b1").hover(function(){
+					$(this).css("background-color", "red");
+				},
+				function(){
+					$(this).css("background-color", "blue");
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input type="button" value="点我" id="b1">
+	</body>
+</html>

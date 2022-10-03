@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.book.app.dao.TbBorrowsDao">
+
+    <resultMap id="borrows" type="com.book.app.entity.TbBorrows">
+        <id property="boid" column="boid"/>
+        <result property="outtime" column="outtime"/>
+        <result property="intime" column="intime"/>
+        <result property="quantity" column="quantity"/>
+        <result property="names" column="names"/>
+        <result property="createtime" column="createtime"/>
+        <result property="modifytime" column="modifytime"/>
+        <result property="deleted" column="deleted"/>
+        <result property="stat" column="stat"/>
+
+        <association property="tbBook" javaType="com.book.app.entity.TbBook">
+            <result property="bid" column="bid"/>
+            <result property="bname" column="bname"/>
+            <result property="bname" column="bname"/>
+        </association>
+    </resultMap>
+
+
+    <insert id="save" useGeneratedKeys="true" keyProperty="boid">
+        insert into tb_borrows(bid, outtime, intime, quantity, names, createtime)
+        VALUES (#{tbBook.bid}, #{outtime}, #{intime}, #{quantity}, #{names}, now())
+    </insert>
+
+
+    <update id="update">
+        update tb_borrows
+        set bid       = #{tbBook.bid},
+            outtime   = #{outtime},
+            intime    = #{intime},
+            quantity  = #{quantity},
+            modifytime= now(),
+            `names`   = #{names}
+        where boid = #{boid}
+    </update>
+
+    <update id="giveback">
+        update tb_borrows
+        set quantity = #{quantity}
+        where boid = #{boid}
+    </update>
+
+    <update id="changeStat">
+        update tb_borrows
+        set stat   = #{stat},
+            intime = #{intime}
+        where boid = #{boid}
+    </update>
+
+
+    <select id="listPage" resultMap="borrows">
+        select *
+        from tb_borrows tbo
+        left join tb_book tb on tbo.bid = tb.bid
+        <where>
+            <if test="keywords!='' and keywords!= null">
+                tbo.names like '%${keywords}%'
+                or tb.bname like '%${keywords}%'
+            </if>
+            and tbo.deleted = 0
+        </where>
+        limit ${page},${size}
+    </select>
+    <select id="count" resultType="java.lang.Integer">
+        select count(*)
+        from tb_borrows tbo
+        left join tb_book tb on tbo.bid = tb.bid
+        <where>
+            <if test="keywords!='' and keywords!= null">
+                tbo.names like '%${keywords}%'
+                or tb.bname like '%${keywords}%'
+            </if>
+            and tbo.deleted = 0
+        </where>
+    </select>
+    <select id="getAllQuantity" resultType="java.lang.Integer">
+        select sum(quantity)
+        from tb_borrows
+        WHERE deleted = 0
+    </select>
+    <select id="getFirstName" resultType="java.lang.String">
+        select `names`, SUM(quantity) as sq
+        from tb_borrows
+        GROUP BY `names`
+        ORDER BY sq DESC
+        LIMIT 1;
+    </select>
+    <select id="getFirstBook" resultType="java.lang.String">
+        select bname
+        from tb_book
+        where bid = (select bid from tb_borrows order by quantity DESC LIMIT 1)
+    </select>
+</mapper>

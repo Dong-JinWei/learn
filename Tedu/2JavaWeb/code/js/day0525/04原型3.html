@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>测试原型</title>
+		<script>
+			/**
+			 * @param {Object} name
+			 * @param {Object} age
+			 * 课堂练习：创建Dog对象，自身添加那么和age属性
+			 * 然后给Dog原型上添加color属性和lookDoor方法
+			 * 通过普通方式调用属性和方法，然后再通过隐形调用属性和方法进行对比
+			 */
+			function Dog(name, age, color){
+				this.name = name;
+				this.age = age;
+				this.color = color;
+			}
+			
+			Dog.prototype.lookDoor = function(){document.write("努力看门中" + "<br/>")}
+			Dog.prototype.color = "绿色"; 
+				
+			var dog = new Dog("大黄", 5, "黑白相间");
+			document.write(dog.name + "<br/>"); // 大黄
+			document.write(dog.age + "<br/>"); // 5
+			document.write(dog.color + "<br/>"); // 黑白相间
+			dog.lookDoor(); // 努力看门中
+			
+			document.write("<hr/>");
+			
+			document.write(dog.__proto__.name + "<br/>"); // undefined
+			document.write(dog.__proto__.age + "<br/>"); // undefined
+			document.write(dog.__proto__.color + "<br/>"); // 绿色
+			dog.__proto__.lookDoor(); // 努力看门中
+			
+			document.write("<hr/>");
+			
+			Dog.prototype.name = "小白";
+			Dog.prototype.age = 4;
+			
+			document.write(dog.__proto__.name + "<br/>"); // 小白
+			document.write(dog.__proto__.age + "<br/>"); // 4
+			document.write(dog.__proto__.color + "<br/>"); // 绿色
+			dog.__proto__.lookDoor(); // 努力看门中
+			
+			console.log(dog);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

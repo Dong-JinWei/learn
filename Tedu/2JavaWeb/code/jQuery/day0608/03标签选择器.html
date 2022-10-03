@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>标签选择器</title>
+        <script src="js/jquery-1.8.3.min.js"></script>
+        <script !src="">
+            $(function () {
+                // $("p").css("font-size","50px").css("color","red");
+                // $("h3").css("font-size","50px").css("color","blue");
+                // $("p,h3").css("font-size","50px").css("color","red");
+                $("*").css("font-size", "50px").css("color", "red");
+            })
+        </script>
+    </head>
+    <body>
+        窗前明月光
+        <!--  让p标签变大变红，h3标签变大变蓝-->
+        <p>大家好1</p>
+        <p>大家好2</p>
+        <p>大家好3</p>
+        <p>大家好4</p>
+        <p>大家好5</p>
+        <h3>晚上好1</h3>
+        <h3>晚上好2</h3>
+        <h3>晚上好3</h3>
+        <h3>晚上好4</h3>
+        <h3>晚上好5</h3>
+    </body>
+</html>

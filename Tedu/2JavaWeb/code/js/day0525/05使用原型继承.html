@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>继承</title>
+		<script>
+			// 父类
+			var Father = function(){
+				this.money = 100000;
+				this.house = "10套海景房";
+				this.eat = function(){
+					document.write("吃辣条");
+				}
+			}
+			// Father自身找到，不会去原型找
+			Father.prototype.house = "1套海景房";
+			// Father自身找不到，就来原型找
+			Father.prototype.car = "100量车";
+			
+			
+			// 子类
+			var Son = function(){
+				// 自己定义了，就不去原型中找了
+				this.money = 10;
+			};
+			Son.prototype = new Father();
+			
+			var son = new Son();
+			// son.money 首先会自身去寻找，此时找不到，就会去原型中找
+			// 此时原型指向Father对象
+			// Father就会在自身去找，Father找到了，就输出了
+			// 这种方式称之为原型链
+			
+			// 先找自己的，找到了就用自己的
+			// 没找到就用原型，原型指向父类，父类有，就是用父类的，没有就找父类的原型
+			document.write(son.money + "<br/>");
+			document.write(son.house + "<br/>");
+			document.write(son.car + "<br/>");
+			document.write(son.gold + "<br/>");
+			son.eat();
+			
+			console.log(son);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

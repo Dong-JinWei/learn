@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="date" class="cn.tedu.bean.MyDate"/>
+
+    <bean id="user01" class="cn.tedu.bean.User">
+        <property name="id" value="1001"/>
+        <property name="name" value="admin"/>
+        <property name="age" value="20"/>
+        <property name="score" >
+            <array>
+                <value>97.8</value>
+                <value>92.6</value>
+                <value>94.1</value>
+            </array>
+        </property>
+        <property name="date" ref="date"/>
+        <property name="joy">
+            <list>
+                <value>唱</value>
+                <value>跳</value>
+                <value>rap</value>
+                <value>篮球</value>
+                <value/>
+                <null/>
+            </list>
+        </property>
+        <property name="book">
+            <set>
+                <value>java</value>
+                <value>mybatis</value>
+                <value>spring</value>
+                <value>springMVC</value>
+            </set>
+        </property>
+        <property name="friend">
+            <map>
+                <entry key="Johnny" value="18"/>
+                <entry key="Dio" value="308"/>
+            </map>
+        </property>
+    </bean>
+</beans>

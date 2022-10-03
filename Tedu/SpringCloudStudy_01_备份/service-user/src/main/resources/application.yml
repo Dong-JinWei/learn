@@ -1,0 +1,17 @@
+server:
+  port: 8301
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///cloudstudy
+    username: root
+    password: root123
+  application:
+    name: userservice  #应用名称
+  cloud:
+    nacos:
+      discovery:
+        # 配置nacos注册地址
+        server-addr: localhost:8848
+        # 将值设置为 false，代表由临时实例转换为非临时实例
+        ephemeral: false

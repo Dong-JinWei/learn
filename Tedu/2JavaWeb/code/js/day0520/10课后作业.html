@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>课后作业</title>
+		<script>
+			// 输入行数和列数，显示指定列数的表格
+			var row = prompt("请输入行") * 1;
+			var col = prompt("请输入列") * 1;
+			
+			document.write("<table width=\"300px\" height=\"300px\" border=\"1px\">");
+
+			for (var i = 0; i < row; i++) {
+				document.write("<tr>")
+				for (var j = 0; j < col; j++) {
+					document.write("<td></td>")
+				}
+				document.write("</tr>")
+			}
+			document.write("</table>")
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

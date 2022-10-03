@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tables xmlns:zz="http://java.sun.com/xml/ns/persistence/orm"
+        xmlns:bg="http://java.sun.com/xml/ns/persistence">
+    <zz:table>
+        <name>桌子</name>
+        <price>888</price>
+    </zz:table>
+
+    <bg:table>
+        <tr>第一行</tr>
+        <tr>第二行</tr>
+    </bg:table>
+</tables>

@@ -1,0 +1,55 @@
+vim配置手册
+
+基本键位:
+    上下左右:
+	h  左
+	l  右
+	k  上
+	j  下
+    撤销: u
+    插入:
+	i  当前位置插入
+    删除:
+	x  删除当前字符
+
+    d --> 剪切
+	-> (d + 右箭头 + 3) 为向右剪切3个字符
+	-->(d + d)删除当前行 
+    y --> 复制
+    p --> 粘贴
+    w --> 光标移动到下一个词
+    c --> (c + i + ") 删除双引号的内容并插入
+    f --> 跳到指定字符的位置(f 指定的位置)
+    / --> 搜索想要查找的字符
+更改键位:
+    例: noremap n h  -->  将n 改为h
+	map s <nop>  -->  将s 的功能改为空
+	map S :w<CR> -->  将S 改为:w 回车 (Shift+s 快速保存)
+	map Q :q<CR> -->  ----------------(快速退出)
+	map W :w<CR> -->  ------(快速保存)
+	map R :wq<CR>  -->  -----(快速保存并退出)
+	map R :source $	MYVIMRC<CR>  ----(快速加载配置文件)
+
+功能配置:
+  syntax on  -->  打开高亮
+  set number -->  显示行号
+  set cursorline --> 在光标位置显示一条线
+  set wrap --> 自动换行,不会超出屏幕
+  set showcmd --> 实时显示当前的输入内容
+  set wildmenu --> 在vim普通模式下,按下Tab键可选择补充的命令
+  set hlsearch --> 高亮显示搜索内容
+  set incsearch --> 输入时同时查找,配合高亮显示
+  set ignorecase --> 查找时忽略大小写
+  set smartcase --> 智能大小写
+
+插件安装:
+    call plug#begin('~/.vim/plugged')
+
+    Plug 'vim~airline/vim-airline'
+    Plug 'connorholyda/vim-snazzy'
+
+    call plug#end()
+    
+    color snazzy
+:PlugInstall
+

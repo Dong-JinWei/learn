@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--接口的包名及路径-->
+<mapper namespace="cn.tedu.mapper.StudentMapper">
+
+    <resultMap id="StuResultMap" type="cn.tedu.bean.Student">
+        <id column="s_id" property="sId"/>
+        <result column="s_name" property="sName"/>
+        <result column="s_pwd" property="sPwd"/>
+    </resultMap>
+
+    <!-- public List<Student> findUserById(@Param("id") Integer sId); -->
+    <select id="findUserById" resultMap="StuResultMap">
+        select * from t_student
+        <if test="id != null">
+            where s_id=#{id}
+        </if>
+    </select>
+
+    <!-- public List<Student> findStudent(@Param("id") Integer sId, @Param("name") String sName, @Param("pwd") String sPwd); -->
+    <select id="findStudent" resultMap="StuResultMap">
+        select * from t_student
+        <where>
+            <if test="id != null">
+                s_id = #{id}
+            </if>
+
+            <if test="name != null">
+                and s_name = #{name}
+            </if>
+
+            <if test="pwd != null">
+                and s_pwd = #{pwd}
+            </if>
+
+        </where>
+    </select>
+
+    <!-- public int updateStudentBySet(@Param("id") Integer sId, @Param("name") String sName, @Param("pwd") String sPwd); -->
+    <update id="updateStudentBySet">
+        update t_student
+        <set>
+            <if test="name != null">
+                s_name = #{name},
+            </if>
+            <if test="pwd != null">
+                s_pwd = #{pwd}
+            </if>
+        </set>
+        where s_id = #{id}
+    </update>
+
+    <!-- public int findStudentByTrim(@Param("id") Integer sId, @Param("name") String sName, @Param("pwd") String sPwd); -->
+    <select id="findStudentByTrim" resultMap="StuResultMap">
+        select * from t_student
+        <trim prefix="where" prefixOverrides=" and | or">
+            <if test="id != null">
+                and s_id = #{id}
+            </if>
+
+            <if test="name != null">
+                and s_name = #{name}
+            </if>
+
+            <if test="pwd != null">
+                and s_pwd = #{pwd}
+            </if>
+        </trim>
+    </select>
+
+    <!-- public int updateStudentByTrim(@Param("id") Integer sId, @Param("name") String sName, @Param("pwd") String sPwd); -->
+    <update id="updateStudentByTrim">
+        update t_student
+
+        <trim prefix="set" prefixOverrides=",">
+            <choose>
+                <when test="name != null">
+                    s_name = #{name},
+                </when>
+                <otherwise>
+                    s_name = s_name,
+                </otherwise>
+            </choose>
+
+            <if test="pwd != null">
+                s_pwd = #{pwd}
+            </if>
+        </trim>
+        where s_id = #{id}
+    </update>
+
+    <!-- public int deleteStudentByList(@Param("list") List<Student> StuList); -->
+    <delete id="deleteStudentByList">
+        delete from t_student
+        <where>
+            <foreach collection="list" index="index" item="item" open="s_id in (" separator="," close=")"
+                     nullable="true">
+                #{item}
+            </foreach>
+        </where>
+    </delete>
+</mapper>

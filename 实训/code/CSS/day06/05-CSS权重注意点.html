@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* id选择器的权重是：0，1，0，0 */
+        #father {
+            color: red;
+        }
+
+        /* 继承不会继承权重，所以子标签的权重是0，标签选择器的权重是1，所以就改变了 */
+        p {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="father">
+        <p>
+            一只小可爱
+        </p>
+    </div>
+</body>
+
+</html>

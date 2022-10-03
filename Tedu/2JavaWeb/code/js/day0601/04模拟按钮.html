@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			a {
+				display: block;
+				width: 50px;
+				height: 20px;
+				text-decoration: none;
+				background-color: #ccc;
+				border-radius: 5px;
+				font-size: 15px;
+				color: black;
+				text-align: center;
+				line-height: 20px;	
+			}
+			a:hover {
+				background-color: orange;
+				color: #fff;
+				box-shadow: 1px 1px #ccc;
+			}
+		</style>
+		<script>
+			function openWeb(){
+				var url = prompt("请输入网址");
+				location.href = "http://www." + url;
+			}
+		</script>
+	</head>
+	<body>
+		<a href="javascript:openWeb()">点我</a>
+	</body>
+</html>

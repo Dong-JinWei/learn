@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>对象做返回值</title>
+		<script>
+			// 硬刷厂印书
+			// 把创建对象的类称为工程类，把创建对象的类，称为工厂方法
+			
+			var bookFactory = {name:"清华出版社", getBooks:function(){
+				return [{bookId:1,name:"java编程思想"}, {bookId:2, name:"深入理解操作系统"}];
+			}}
+			var books = bookFactory.getBooks();
+			console.log(books);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

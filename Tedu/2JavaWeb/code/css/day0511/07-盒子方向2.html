@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>测试盒子方向</title>
+		<style>
+			div {
+				width: 300px;
+				height: 300px;
+				background-color: red;
+				float: left;
+			}
+			/* 像素在不同分辨率的实际宽度不同 */
+			/* 以下属性同时设置时，其水平距离时两个外边距之和 */
+			.d1 {
+				margin-right: 100px;
+			}
+			
+			.d2 {
+				margin-left: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="d1"></div>
+		<div class="d2"></div>
+	</body>
+</html>

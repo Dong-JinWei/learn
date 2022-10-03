@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.tedu.dao.BookDao">
+
+    <resultMap id="book" type="cn.tedu.pojo.Book">
+        <id property="bid" column="bid"/>
+        <result property="cateid" column="cateid"/>
+        <result property="bnum" column="bnum"/>
+        <result property="bname" column="bname"/>
+        <result property="price" column="price"/>
+        <result property="author" column="author"/>
+        <result property="ddesc" column="ddesc"/>
+        <result property="quantity" column="quantity"/>
+        <result property="deleted" column="deleted"/>
+        <result property="createtime" column="createtime"/>
+        <result property="modifytime" column="modifytime"/>
+    </resultMap>
+
+    <insert id="insertBook">
+        insert into book(bnum, bname, price, author, ddesc, quantity, createtime, modifytime)
+        VALUES (#{bnum}, #{bname}, #{price}, #{author}, #{ddesc}, #{quantity}, now(), now())
+    </insert>
+
+    <update id="remove">
+        update book set deleted=1 where bid in
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </update>
+
+    <!-- <update id="edit"> -->
+    <!--     update book -->
+    <!--     set bnum = #{bnum}, bname = #{bname}, price = #{price}, author = #{author}, ddesc = #{ddesc}, quantity = #{quantity}, modifytime = now() -->
+    <!--     where bid = #{bid} -->
+    <!-- </update> -->
+
+    <select id="count" resultType="java.lang.Integer">
+        select count(*)
+        from book
+        where deleted = 0
+    </select>
+
+    <select id="findAll" resultMap="book">
+        select * from book
+        <where>
+            <if test="bname != null and bname != ''">
+                bname like '%${bname}%'
+            </if>
+            and deleted = 0
+        </where>
+        limit #{page}, #{rows}
+    </select>
+
+
+</mapper>

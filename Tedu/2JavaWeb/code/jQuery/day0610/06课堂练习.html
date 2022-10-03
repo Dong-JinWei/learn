@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<!-- // jQuery实现 -->
+		<script>
+			$(function(){
+				$("tr:even").css("background-color", "red");
+				$("tr:odd").css("background-color", "skyblue");
+			})
+		</script>
+		
+		<!-- // js实现 -->
+<!-- 		<script>
+			window.onload = function(){
+				var trs = document.getElementsByTagName("tr");
+				for(var i in trs){
+					if (i % 2 == 0){
+						trs[i].style.backgroundColor = "red";
+					}else {
+						trs[i].style.backgroundColor = "skyblue";
+					}
+					
+				}
+			} -->
+		</script>
+	</head>
+	<body>
+		<table>
+			<tr><td>第一行</td></tr>
+			<tr><td>第二行</td></tr>
+			<tr><td>第三行</td></tr>
+			<tr><td>第四行</td></tr>
+			<tr><td>第五行</td></tr>
+			<tr><td>第六行</td></tr>
+		</table>
+	</body>
+</html>

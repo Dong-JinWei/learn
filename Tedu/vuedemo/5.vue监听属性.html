@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>监听属性</title>
+		<script src="js/v2.6.10/vue.min.js"></script>
+
+	</head>
+	<body>
+		<div id="app">
+			<!-- 
+			监听属性 watch 
+			-->
+			<input v-model='a'/>
+			
+			
+		</div>
+		<script>
+			new Vue({
+				el: '#app',
+				data:{
+					a: 10
+				},
+				watch: {
+					a: function(newVal, oldVal){
+						console.log(newVal);
+						console.log(oldVal);
+					}
+				}
+			})
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>子元素选择器</title>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script>
+			$(function(){
+				// 在每个 ul 查找第 2 个li
+				$("ul li:nth-child(2)").css("color", "pink");
+				
+				// ':first' 只匹配一个元素，而此选择符将为每个父元素匹配一个子元素
+				$("ul li:first-child").css("color", "skyblue");
+				// ':last'只匹配一个元素，而此选择符将为每个父元素匹配一个子元素
+				$("ul li:last-child").css("color", "orangered");
+				
+				// 如果某个元素是父元素中唯一的子元素，那将会被匹配
+				// 如果父元素中含有其他元素，那将不会被匹配。
+				$("ul li:only-child").css("color", "springgreen");
+				
+				// 匹配所有 input, textarea, select 和 button 元素
+				$(":input").css("background-color", "orange");
+				
+				// 匹配所有的单行文本框
+				$(":text").css("background-color", "azure");
+				
+				// 匹配所有密码框
+				$(":password").css("background-color", "brown");
+				
+				// 匹配所有单选按钮
+				$(":radio").css("width", "50px").css("height", "50px");
+				
+				// 匹配所有复选框
+				$(":checkbox").css("width", "50px").css("height", "50px");
+				
+				// 匹配所有提交按钮
+				$(":submit").css("width", "50px").css("height", "50px").css("background-color", "red");
+
+				// 匹配所有图像域
+				$(":image").css("width", "50px").css("height", "50px").css("background-color", "greenyellow");
+				
+				// 匹配所有重置按钮
+				$(":reset").css("width", "50px").css("height", "50px").css("background-color", "purple");
+				
+				// 匹配所有按钮
+				$(":button").css("width", "50px").css("height", "50px").css("background-color", "pink");
+
+				// 匹配所有文件域
+				$(":file").css("width", "150px").css("height", "50px").css("background-color", "black");
+				
+				// 匹配所有可用元素
+				$(":enabled").css("width", "150px").css("height", "50px").css("background-color", "skyblue");
+				
+				//匹配所有不可用元素
+				$(":disabled").css("width", "150px").css("height", "50px").css("background-color", "hotpink");
+				
+				// 匹配所有选中的被选中元素(复选框、单选框等，不包括select中的option)
+				$(":checked").css("width", "50px").css("height", "50px").css("background-color", "red");
+				
+				// 匹配所有选中的option元素
+				$("select option:selected").css("width", "50px").css("height", "50px").css("background-color", "red");
+				
+				
+			})
+		</script>
+	</head>
+	<body>
+		<ul>
+		  <li>John</li>
+		  <li>Karl</li>
+		  <li>Brandon</li>
+		</ul>
+		<ul>
+		  <li>Glen</li>
+		  <li>Tane</li>
+		  <li>Ralph</li>
+		</ul>
+		<hr>
+		
+		<ul>
+		  <li>John</li>
+		  <li>Karl</li>
+		  <li>Brandon</li>
+		</ul>
+		<ul>
+		  <li>Glen</li>
+		</ul>
+		<hr>
+		
+		<form>
+		    <input type="button" value="Input Button"/>
+		    <input type="checkbox" checked/>
+		
+		    <input type="file" />
+		    <input type="hidden" />
+		    <input type="image" />
+		
+		    <input type="password" />
+		    <input type="radio" />
+		    <input type="reset" />
+		
+		    <input type="submit" />
+		    <input type="text" />
+		    <select><option selected>Option</option></select>
+		
+		    <textarea></textarea>
+		    <button>Button</button>
+		</form>
+		<hr>
+		
+		<form>
+		  <input type="text" />
+		  <input type="checkbox" />
+		  <input type="radio" value="radio"/>
+		  <input type="image" />
+		  <input type="file" />
+		  <input type="submit" />
+		  <input type="reset" />
+		  <input type="password" />
+		  <input type="button" />
+		  <select><option/></select>
+		  <textarea></textarea>
+		  <button></button>
+		</form>
+		<hr>
+		
+		<select>
+		  <option value="1">Flowers</option>
+		  <option value="2" selected="selected">Gardens</option>
+		  <option value="3">Trees</option>
+		</select>
+	</body>
+</html>

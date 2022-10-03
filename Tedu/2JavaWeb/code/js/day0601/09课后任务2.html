@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>课后任务2</title>
+	</head>
+	<body>
+		<input type="button" onclick="big()" value="放大">
+		<input type="button" onclick="small()" value="缩小">
+		<br/>
+		<img id="i" src="img/p.jpg" alt="">
+	</body>
+	<script>
+		// 2. 给图片添加两个按钮，一个按钮有放大的功能，一个按钮有缩小的功能
+		var img = document.getElementById("i");
+		var w = 500;
+		var width = w + "px";
+		img.style.width = width;
+		function big(){
+			w += 20;
+			width = w + "px";
+			img.style.width = width;
+		}
+		function small(){
+			w -= 20;
+			width = w + "px";
+			img.style.width = width;
+		}
+	</script>
+</html>

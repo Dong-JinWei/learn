@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 如果想提交表单数据或重置数据，必须把相关表单代码放到form表单中 -->
+		<!-- action表示服务器地址，method：提交方式，GET（默认），POST -->
+		<form action="server.html" method="POST">
+			<!-- input：type="text"表示文本框， placeholder表示提示信息， name后台接收时的变量名，value表示默认值-->
+			<label for="abc">用户名：</label>
+			<input id="abc" type="text" placeholder="请输入用户名" name="username" value="admin" />
+			<br />
+			<input type="text" placeholder="请输入邮箱" name="mail" value="2646513007@qq.com" /><br />
+			<!-- maxlength：文本最大长度， disabled：该组件不可用 -->
+			<input type="text" placeholder="请输入手机号" name="text" maxlength="11" disabled /><br />
+
+			<!-- lable，点击文字，触发输入框 -->
+			
+			<label>密码：<input type="password" name="password" maxlength="16" /><br /></label>
+			确认密码：<input type="password" name="password2" maxlength="16" /><br />
+			密保问题答案：<input type="password" placeholder="你的生日是" name="password2" maxlength="16" /><br />
+
+			<!-- 复选框：设置好value，方便以后提交数据 -->
+			兴趣爱好：
+			<input type="checkbox" name="hobbies" value="篮球" checked>篮球
+			<input type="checkbox" name="hobbies" value="足球" checked>足球
+			<input type="checkbox" name="hobbies" value="乒乓球">乒乓球<br />
+
+			<!-- 单选按钮 -->
+			性别：
+			<input type="radio" name="gender" value="男" checked />男
+			<input type="radio" name="gender" value="女">女
+			<br />
+
+			上传文件：
+			<input type="file">
+			<br />
+			<!-- value表示按钮上的文字 -->
+			普通按钮：<input type="button" value="普通按钮" />
+			<br />
+			重置按钮：<input type="reset" value="重置数据" />
+			<br />
+			提交按钮：<input type="submit" />
+		</form>
+	</body>
+</html>

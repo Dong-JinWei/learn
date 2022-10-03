@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>课后练习1</title>
+		<script>
+			// 定义一个函数，用于显示出当前日期，格式为xxxx年xx月xx日 xx时xx分xx秒 星期x
+			function dateFormat(date){
+				year = date.getFullYear();
+				month = date.getMonth() + 1;
+				day = date.getDate();
+				week = date.getDay();
+				hours = date.getHours();
+				minutes = date.getMinutes();
+				senconde = date.getSeconds();
+				document.write(year + "年" + month + "月" + day + "日 " + hours + "时" + minutes + "分" + senconde + "秒");
+				document.write(" 周" + (week == 0 ? "7" : week));
+			}
+			var date = new Date();
+			date.get
+			dateFormat(date);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

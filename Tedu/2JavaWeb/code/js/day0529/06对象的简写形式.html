@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>对象的简写形式</title>
+		<script>
+			// 原始方式，给对象属性赋值
+			let name = prompt("请输入姓名：");
+			let age = prompt("请输入年龄") * 1;
+			// let person = {name:name,age:age,eat:function(){alert(this.name + "正在吃饭")}};
+			// console.log(person);
+			// person.eat();
+			// 如果属性名和属性值（变量名）一样，可以省略属性值，如果有方法可以吧function省略
+			let person = {name, age, eat(){alert(this.name + "在吃饭" + this.age)}};
+			person.eat();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

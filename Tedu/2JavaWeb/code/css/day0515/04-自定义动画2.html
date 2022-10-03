@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>自定义动画2</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.d {
+				width: 300px;
+				height: 300px;
+				background-color: #f00;
+				position: absolute;
+				animation: abc 5s infinite;
+				
+			}
+			@keyframes abc {
+				0% {
+					top: 0;
+					left: 0;
+				}
+				25% {
+					top: 0;
+					left: 500px;
+					border-radius: 50%;
+				}
+				50% {
+					top: 500px;
+					left: 500px;
+					border-radius: 0%;
+				}
+				
+				75% {
+					top: 500px;
+					left: 0;
+					border-radius: 50%;
+				}
+				100% {
+					top: 0;
+					left: 0;
+					border-radius: 0%;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="d"></div>
+	</body>
+</html>

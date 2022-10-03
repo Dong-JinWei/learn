@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>正则表达式常见符号</title>
+		<script>
+			var str = "abc 1a2 1b2 1c2 1bc ab2 1z2";
+			// 案例：取出1x2，x表示a或者b或者c
+			var re = /1[abc]2/g;
+			document.write(str.match(re) + "<br/>");
+			// 案例：取出1x2， x表示a到z
+			var re = /1[a-z]2/g;
+			document.write(str.match(re) + "<br/>");
+			//[0-9] 表示数字，还可以用\d表示
+			//[a-zA-Z0-9]可以用\w表示
+			// 案例：取出1x2，x除了a都可以
+			var re = /1[^a]2/g;
+			document.write(str.match(re) + "<br/>");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

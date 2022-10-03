@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--  version表示版本，目前都是1.0版本-->
+<!--  encoding表示编码，一般都使用utf-8-->
+
+<!-- xml语法要求严格：xml要求一个xml文件只能有一个根元素 -->
+<!-- xml区分大小写 -->
+<!--  双标签必须有闭合标签（结束标签）-->
+<Books>
+    <book id="3">
+        <name>java大全</name>
+        <price>25</price>
+<!--          如果双标签重没有内容，可以转换成单标签-->
+        <author/>
+    </book>
+</Books>

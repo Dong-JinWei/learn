@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>模拟福彩3D</title>
+		<style>
+			div {
+				width: 50px;
+				height: 50px;
+				border: 5px solid royalblue;
+				border-radius: 50%;
+				display: inline-block;
+				line-height: 50px;
+				text-align: center;
+				color: darkcyan;
+				font-size: 50px;
+			}
+		</style>
+		<script>
+			function f() {
+				for (let i = 0; i < 3; i++) {
+					let num = Math.floor(Math.random() * 10);
+					document.write("<div>" + num + "</div>");
+				}
+			}
+			f();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

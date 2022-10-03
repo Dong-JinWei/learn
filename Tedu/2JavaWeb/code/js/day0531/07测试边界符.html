@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>测试边界符</title>
+		<script>
+			var str = "abcdefg";
+			// 中括号的外边的^表示以指定的字符开头
+			var re = /^a/;
+			document.write(re.test(str) + "<br/>")
+			// $以指定字符结尾
+			var re = /efg$/;
+			document.write(re.test(str) + "<br/>")
+			// 如果^和$符号同时使用表示精确匹配
+			var re = /^abc$/;
+			document.write(re.test(str) + "<br/>")
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

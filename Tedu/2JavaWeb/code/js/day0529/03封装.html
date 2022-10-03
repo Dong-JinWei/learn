@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>封装</title>
+		<script>
+			function Person(name, age){
+				// 局部变量
+				var _name = name;
+				var _age = age;
+				
+				this.setName = function(name){
+					_name = name;
+				}
+				this.getName = function(){
+					return _name;
+				}
+				this.setAge = function(age){
+					_age = age;
+				}
+				this.getAge = function(){
+					return _age;
+				}
+			}
+			var person = new Person("张三", 20);
+			document.write("person._name: " + person._name + "<br/>");
+			document.write("person._age: " + person._age + "<br/>");
+			document.write("<hr/>")
+			document.write("person.getName(): " + person.getName() + "<br/>");
+			document.write("person.getAge(): " + person.getAge() + "<br/>");
+			person.setName("李四");
+			person.setAge(30);
+			document.write("person.getName(): " + person.getName() + "<br/>");
+			document.write("person.getAge(): " + person.getAge() + "<br/>");
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>课后任务1</title>
+		<script>
+			/**
+			 * Rose 继承 Flower
+			 */
+			
+			var Flower = function(){
+				this.name = "花";
+				this.color = "红色";
+				this.smell = function(){
+					document.write("淡淡的清香" + "<br/>");
+				}
+			}
+			
+			var Rose = function(){
+				this.name = "玫瑰花";
+			};
+			Rose.prototype = new Flower();
+			
+			var rose = new Rose();
+			document.write(rose.name + "<br/>");
+			document.write(rose.color + "<br/>");
+			rose.smell();
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

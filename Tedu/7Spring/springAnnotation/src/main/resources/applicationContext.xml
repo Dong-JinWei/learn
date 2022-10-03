@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 需要在beans标签中，定义该属性的值 -->
+
+    <bean id="date" class="cn.tedu.bean.MyDate"/>
+
+    <!-- <bean id="user01" p:id="1001" p:name="admin" p:age="21" class="cn.tedu.bean.User" autowire="byName"> -->
+    <!-- <bean id="user01" p:id="1001" p:name="admin" p:age="21" class="cn.tedu.bean.User" autowire="byType"/> -->
+    <bean id="user01" class="cn.tedu.bean.User" autowire="byName"/>
+
+    <bean id="id" class="java.lang.Integer">
+        <constructor-arg index="0" value="1001"/>
+    </bean>
+
+    <!-- <bean id="id" class="java.lang.Integer"> -->
+    <!--     <constructor-arg index="0" value="1001"/> -->
+    <!-- </bean> -->
+
+    <!-- <bean id="String" class="java.lang.String"> -->
+    <!--     <constructor-arg index="0" value="dowei"/> -->
+    <!-- </bean> -->
+
+    <!-- default就会默认执行自己定义的装配方式 -->
+    <!-- <bean id="user01" p:id="1001" p:name="admin" p:age="21" class="cn.tedu.bean.User" autowire="default"/> -->
+
+</beans>

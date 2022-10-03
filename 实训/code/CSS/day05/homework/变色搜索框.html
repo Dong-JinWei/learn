@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变色搜索框</title>
+    <style>
+        .nav input {
+            background-image: url(img/c1.png);
+            background-repeat: no-repeat;
+            background-position: right center;
+            border-radius: 3px;
+        }
+
+        .nav input:focus {
+            background-image: url(img/c2.png);
+            border-style: solid;
+            border-color: skyblue;
+            outline: none;
+            box-shadow: 0 0 15px skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <input type="text">
+    </div>
+</body>
+
+</html>

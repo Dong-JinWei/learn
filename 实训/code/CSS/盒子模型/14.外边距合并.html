@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外边距合并</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .up {
+            margin-bottom: 10px;
+        }
+
+        /* 会默认取最大的边距，建议只写一个 */
+        .down {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="up">上边的小可爱</div>
+    ::after
+    <div class="down">下边的小可爱</div>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <listener>
+        <listener-class>cn.tedu.ApplicationListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>cn.tedu.Application2</listener-class>
+    </listener>
+    <filter>
+        <filter-name>filter</filter-name>
+        <filter-class>cn.tedu.FilterTest</filter-class>
+        <init-param>
+            <param-name>charset</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>filter</filter-name>
+        <url-pattern>/a/*</url-pattern>
+    </filter-mapping>
+
+
+    <filter>
+        <filter-name>f02</filter-name>
+        <filter-class>cn.tedu.Filter02</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>f02</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>f03</filter-name>
+        <filter-class>cn.tedu.Filter03</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>f03</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>f01</filter-name>
+        <filter-class>cn.tedu.Filter01</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>f01</filter-name>
+        <url-pattern>/a/*</url-pattern>
+    </filter-mapping>
+</web-app>

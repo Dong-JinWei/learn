@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>其他事件</title>
+		<style>
+			.d{
+				width: 300px;
+				height: 400px;
+				background-color: blue;
+			}
+		</style>
+		<script>
+			window.onload = function(){
+				var div = document.querySelector(".d");
+				div.onclick = function(){
+					alert('div被单击了')
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<!-- ondblclick双击执行了相应的方法 -->
+		<input type="button" ondblclick="alert('双击了')">
+		<!-- onchange表示下拉列表内容改变了 -->
+		<select onchange="alert('下拉列表改变了')">
+			<option value="1990">1990</option>
+			<option value="1991">1991</option>
+			<option value="1992">1992</option>
+			<option value="1993">1993</option>
+		</select>
+		<!-- onmouseover 当鼠标移入元素，执行指定的方法-->
+		<!-- onmouseout 当鼠标移出元素时，执行指定方法 -->
+		<div class="d" onmouseover="this.style.backgroundColor='red'" onmouseout="this.style.backgroundColor='blue'"></div>
+	</body>
+</html>

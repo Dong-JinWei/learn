@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>创建正则表达式</title>
+		<script>
+			
+			// 验证字符串中是否包含abc
+			var str = "abc";
+			var str1 = "xyz";
+			// 方式一
+			var re = new RegExp("abc","ig");
+			document.write(re + "<br/>");
+			document.write(re.test(str)+ "<br/>"); // true
+			document.write(re.test(str1)+ "<br/>"); // false
+			// 方式2
+			var re2 = /abc/ig;
+			document.write(re2.test(str)+ "<br/>"); // true
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

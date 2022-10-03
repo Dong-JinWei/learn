@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>生命周期函数</title>
+		<script src="js/v2.6.10/vue.min.js"></script>
+
+	</head>
+	<body>
+		<div id="app">
+			 <input  v-model="msg"/>
+		</div>
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					msg: '你好啊'
+				},
+				//1.当vue实例在进行部分初始化之后自动执行beforeCreate生命周期函数
+				beforeCreate: function() {
+					console.info(this.$el);
+					console.info(this.msg);
+					console.info('beforeCreate');
+				},
+				//2.当执行完beforeCreate生命周期函后会自动执行created生命周期函数
+				created: function() {
+					console.info(this.$el);
+					console.info(this.msg);
+					console.info('created');
+				},
+				//3.模板和数据相结合即将挂载到页面上的一瞬间之前的这个时间点上执行beforeMount生命周期函数
+				beforeMount: function() {
+					console.info(this.$el);
+					console.info(this.msg);
+					console.info('beforeMount');
+				},
+				//4.模板和数据相结合即将挂载到页面上之后会执行mounted生命周期函数
+				mounted: function() {
+					console.info(this.$el);
+					console.info(this.msg);
+					console.info('mounted');
+				},
+				//5.当组件被完全销毁的时候会执行beforeDestroy生命周期函数
+				beforeDestroy: function() {
+					console.info(this.$el);
+					console.info(this.msg);
+					console.log("beforeDestroy")
+				},
+				//6.当组件被完全销毁之后会执行destroyed生命周期函数
+				destroyed: function() {
+					console.info(this.$el);
+					console.info(this.msg);
+					console.log("destroyed")
+				},
+				//7.当数据发生改变还没有发生渲染之前会触发beforeUpdate生命周期函数
+				beforeUpdate: function() {
+					console.info(this.$el);
+					console.info(this.msg);
+					console.log("beforeUpdate")
+				},
+				//8.当数据发生改变还没有发生渲染之前会触发updated生命周期函数
+				updated: function() {
+					console.info(this.$el);
+					console.info(this.msg);
+					console.log("updated")
+				}
+			})
+		</script>
+	</body>
+</html>

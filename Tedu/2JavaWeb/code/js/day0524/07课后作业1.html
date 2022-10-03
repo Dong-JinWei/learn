@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>第一题</title>
+		<script>
+			// 方式1
+			var teacher1 = new Object();
+			teacher1.id = 1011;
+			teacher1.name = "张三";
+			teacher1.age = 30;
+			teacher1.course = ["数据结构", "操作系统", "计算机网络"];
+			teacher1.isGoodTeacher = function(){
+				document.write("Yes");
+			}
+			console.log(teacher1);
+			
+			// 方式2
+			function Teacher2(id,name, age, course){
+				this.id = id;
+				this.name = name;
+				this.age = age;
+				this.course = course;
+				this.isGoodTeacher = function(){
+					document.write("Yes");
+				}
+			}
+			var teacher2 = new Teacher2(1003, "王五", 33, ["数据库", "JDBC", "JavaWeb"]);
+			console.log(teacher2);
+			
+			// 方式3
+			var teacher3 = {id:1012, name:"李四", age:32,course:["Java", "大数据", "Python"],
+			 isGoodTeacher:function(){alert("Yes")}};
+			console.log(teacher3);
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
